@@ -1,11 +1,11 @@
 {
-  "name": "remix-starter-reactbricks-v2",
+  "name": "bucode-2025",
   "private": true,
   "sideEffects": false,
   "type": "module",
-  "description": "A simple starter to get started quickly with React Bricks and Remix",
-  "version": "1.3.7",
-  "author": "Matteo Frana <f2@f2.net>",
+  "description": "Bucode 2025",
+  "version": "1.0.0",
+  "author": "BuCode Team",
   "license": "MIT",
   "scripts": {
     "build": "remix build",
