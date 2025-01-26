@@ -5,16 +5,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        display: ["Darker Grotesque", "sans-serif"],
+        sans: ["Innovator Grotesk", "sans-serif"],
+      },
+      colors: {
+        ocean: "#091420",
       },
     },
   },

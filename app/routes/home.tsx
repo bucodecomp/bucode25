@@ -1,5 +1,6 @@
+import { Hero } from "~/components/home/hero";
+import { Navbar } from "~/components/navbar";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +10,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <main className="flex items-center justify-center pt-16 pb-4">
+      <Hero />
+      <div className="h-screen w-full bg-ocean/80" />
+    </main>
+  );
 }
