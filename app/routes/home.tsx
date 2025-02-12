@@ -1,19 +1,22 @@
 import { Hero } from "~/components/home/hero";
-import { Navbar } from "~/components/navbar";
 import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ error }: Route.MetaArgs) {
+  console.log(error);
   return [
-    { title: "New React Router App" },
+    { title: "BuCode Landing Page" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function Home() {
+export function loader({ context }: Route.LoaderArgs) {
+  return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
+    <main className="flex flex-col items-center justify-center min-h-dvh">
       <Hero />
-      <div className="h-screen w-full bg-ocean/80" />
     </main>
   );
 }
