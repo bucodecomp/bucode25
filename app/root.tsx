@@ -9,7 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { IconSprite } from "./components/icon-sprite";
+import { IconSprite } from "./components/_base/icon-sprite";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="antialiased">
+      <body className="antialiased bg-ocean-100">
         <IconSprite />
         {children}
         <ScrollRestoration />

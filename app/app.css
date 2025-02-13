@@ -1,14 +1,41 @@
 @import "tailwindcss";
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --font-display: "Aeonik", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+@theme {
+  --color-ocean-0: oklch(12.212% 0.027 250);
+  --color-ocean-25: oklch(13.98% 0.027 250);
+  --color-ocean-50: oklch(16.32% 0.027 250);
+  --color-ocean-75: oklch(17.06% 0.031 250);
+  --color-ocean-100: oklch(17.35% 0.0345 250);
+  --color-ocean-200: oklch(21.02% 0.059 250);
+  --color-ocean-300: oklch(30.11% 0.086 250);
+  --color-ocean-400: oklch(40.63% 0.115 250);
+  --color-ocean-500: oklch(50.57% 0.143 250);
+  --color-ocean-600: oklch(58.95% 0.195 250);
+  --color-ocean-700: oklch(65.68% 0.186 250);
+  --color-ocean-800: oklch(73.67% 0.142 250);
+  --color-ocean-900: oklch(81.35% 0.097 250);
+  --color-ocean-950: oklch(89.22% 0.055 250);
+  --color-ocean-975: oklch(93.11% 0.035 250);
+  --color-ocean-1000: oklch(96.97% 0.015 250);
+}
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }

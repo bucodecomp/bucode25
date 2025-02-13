@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
 import clsx from "clsx";
+import { cva } from "cva";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { cva } from "class-variance-authority";
 import { primaryButton } from "./button";
 
 const navLink = cva(
-  "text-[#90A7B6] hover:text-white transition-colors text-sm font-sans",
+  "text-ocean-950 hover:text-white transition-colors text-sm font-sans",
   {
     variants: {
       variant: {
@@ -13,7 +13,7 @@ const navLink = cva(
         desktop: "",
       },
     },
-  }
+  },
 );
 
 const navContainer = cva(
@@ -28,7 +28,7 @@ const navContainer = cva(
     defaultVariants: {
       scrolled: false,
     },
-  }
+  },
 );
 
 const navigationLinks = [
@@ -99,7 +99,7 @@ export function Navbar() {
             >
               <path
                 d="M10.7809 7.33327L7.2049 3.75726L8.1477 2.81445L13.3332 7.99993L8.1477 13.1853L7.2049 12.2425L10.7809 8.6666H2.6665V7.33327H10.7809Z"
-                fill="#020E16"
+                fill="currentColor"
               />
             </svg>
           </Link>
