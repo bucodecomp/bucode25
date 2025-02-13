@@ -50,6 +50,10 @@
 }
 
 @theme {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme {
 
   --color-neutral-0: oklch(12.212% 0.003 230);
   --color-neutral-25: oklch(14.43% 0.003 230);

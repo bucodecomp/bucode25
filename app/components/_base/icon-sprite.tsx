@@ -25,8 +25,8 @@ export const IconSprite = () => {
       </symbol>
       <symbol id="bucode-logo" viewBox="0 0 105 24">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M12.75 21H15C16.6568 21 18 21 18 18L18 14L20 12L18 10V6C18 3 16.6569 3 15 3H11.75L12.25 5H15C15.5523 5 16 5 16 6V10.75L17.25 12L16 13.25V18C16 19 15.5523 19 15 19H12.25L12.75 21Z"
           fill="white"
         />

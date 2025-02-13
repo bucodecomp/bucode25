@@ -5,24 +5,24 @@ import { Link } from "react-router";
 import { primaryButton } from "./button";
 
 const navLink = cva(
-  "text-ocean-950 hover:text-white transition-colors text-sm font-sans",
+  "text-ocean-950/50 group relative hover:text-ocean-1000 transition-colors text-sm font-sans font-medium",
   {
     variants: {
       variant: {
         mobile: "block px-3 py-2 rounded-md hover:bg-gray-800",
-        desktop: "",
+        desktop: "py-2 px-4",
       },
     },
   },
 );
 
 const navContainer = cva(
-  "max-w-7xl mx-auto px-4 transition-all duration-200 ring-1 ring-white/0 rounded-2xl",
+  "max-w-7xl mx-auto px-4 transition-all duration-200 ring-1 ring-ocean-100/0 rounded-2xl",
   {
     variants: {
       scrolled: {
-        true: "bg-white/[0.01] backdrop-blur-sm ring-white/5",
-        false: "backdrop-blur-sm",
+        true: "bg-ocean-100/96 ring-ocean-25",
+        false: "backdrop-blur-none",
       },
     },
     defaultVariants: {
@@ -55,16 +55,16 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-8 left-0 right-0 z-50 px-4">
+    <nav className="fixed top-8 right-0 left-0 z-50 px-4">
       <div className={navContainer({ scrolled: isScrolled })}>
-        <div className="flex items-center h-16">
+        <div className="flex h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center py-2">
               <svg
                 width={105}
                 height={24}
-                className="h-6 w-auto text-ocean-800 hover:text-ocean-600 transition-colors"
+                className="h-6 w-auto text-ocean-800 transition-colors hover:text-ocean-600"
               >
                 <title>Bucode Logo</title>
                 <use href="#bucode-logo" />
@@ -73,15 +73,16 @@ export function Navbar() {
           </div>
 
           {/* Desktop Menu - Centered */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-8">
+          <div className="hidden flex-1 justify-center md:flex">
+            <div className="flex items-center gap-4">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   className={navLink({ variant: "desktop" })}
                 >
-                  {link.name}
+                  <span className="relative z-10">{link.name}</span>
+                  <div className="absolute inset-0 scale-80 rounded-md bg-ocean-900/5 opacity-0 ring-offset-2 transition-all duration-1000 ease-out-expo focus:ring-2 focus:ring-ocean-200 focus:ring-offset-ocean-100 group-hover:scale-100 group-hover:opacity-100" />
                 </Link>
               ))}
             </div>
@@ -112,11 +113,11 @@ export function Navbar() {
           </Link>
 
           {/* Mobile menu button */}
-          <div className="md:hidden ml-auto">
+          <div className="ml-auto md:hidden">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-white"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -153,14 +154,14 @@ export function Navbar() {
             </button>
           </div>
         </div>
-        <div className="absolute bottom-[-1px] left-0 right-0 h-[1px]">
-          <div className="mx-auto max-w-2xl h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-10" />
+        <div className="absolute right-0 bottom-[-1px] left-0 h-[2px]">
+          <div className="mx-auto h-full max-w-2xl bg-gradient-to-r from-transparent via-ocean-100 to-transparent" />
         </div>
       </div>
 
       {/* Mobile menu */}
       <div className={clsx("md:hidden", isOpen ? "block" : "hidden")}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-ocean">
+        <div className="space-y-1 bg-ocean px-2 pt-2 pb-3 sm:px-3">
           {navigationLinks.map((link) => (
             <Link
               key={link.to}

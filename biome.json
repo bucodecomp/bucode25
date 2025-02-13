@@ -9,6 +9,9 @@
       "recommended": true,
       "a11y": {
         "useAltText": "error"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     }
   },
@@ -24,4 +27,4 @@
       "quoteStyle": "double"
     }
   }
-} 
+}
