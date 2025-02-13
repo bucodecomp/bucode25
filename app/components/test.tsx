@@ -2,6 +2,7 @@ const oceanBG = [
   "bg-ocean-0",
   "bg-ocean-25",
   "bg-ocean-50",
+  "bg-ocean-75",
   "bg-ocean-100",
   "bg-ocean-200",
   "bg-ocean-300",
@@ -11,7 +12,9 @@ const oceanBG = [
   "bg-ocean-700",
   "bg-ocean-800",
   "bg-ocean-900",
+  "bg-ocean-925",
   "bg-ocean-950",
+  "bg-ocean-975",
   "bg-ocean-1000",
 ];
 
@@ -28,7 +31,9 @@ const oceanText = [
   "text-ocean-700",
   "text-ocean-800",
   "text-ocean-900",
+  "text-ocean-925",
   "text-ocean-950",
+  "text-ocean-975",
   "text-ocean-1000",
 ];
 
