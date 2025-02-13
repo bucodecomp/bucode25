@@ -30,10 +30,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap"
+          rel="stylesheet"
+        />
         <Meta />
         <Links />
       </head>
-      <body className="antialiased bg-ocean-100 selection:bg-ocean-600/10 selection:text-ocean-500">
+      <body className="antialiased bg-ocean-100 selection:bg-ocean-600/10 selection:text-ocean-500 font-sans">
         <IconSprite />
         {children}
         <ScrollRestoration />

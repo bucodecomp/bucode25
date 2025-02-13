@@ -6,12 +6,11 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @theme {
-  --font-display: "Aeonik", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Darker Grotesque", serif;
 }
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "Innovator Grotesk", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -107,6 +106,18 @@
   --color-red-975: oklch(93.11% 0.035 10);
   --color-red-1000: oklch(96.97% 0.001 10);
 
+}
+
+@theme {  
+  --tracking-xs: -0.02em;
+  --tracking-sm: -0.01em;
+  --tracking-md: 0.0em;
+  --tracking-lg: 0.01em;
+  --tracking-xl: 0.02em;
+  --tracking-2xl: 0.04em;
+  --tracking-3xl: 0.08em;
+  --tracking-4xl: 0.12em;
+  --tracking-5xl: 0.16em;
 }
 
 html,

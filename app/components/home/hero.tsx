@@ -6,9 +6,10 @@ export const Hero = () => {
       <div className="rounded-4xl bg-ocean-25 p-4 h-full w-full pt-24 flex items-center justify-center">
         <div className="flex flex-col gap-4">
           <SectionHead
-            title="Best in class web design and development"
-            description="We offer a wide range of services to help you grow your business."
-            label="Our Services"
+            title="Boğaziçi University Algorithmic Competition"
+            description="As we get closer to the exciting moments, the countdown has started for the 
+Qualification and Final Rounds. The big day is coming soon, don't miss it!"
+            label="BuCode 2025"
             align="center"
           />
         </div>

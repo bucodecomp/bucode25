@@ -10,7 +10,7 @@ const headContainerClass = cva("max-w-2xl flex flex-col gap-4", {
   },
 });
 
-export function SectionHead({
+export const SectionHead = ({
   title,
   label,
   description,
@@ -20,7 +20,7 @@ export function SectionHead({
   label?: string | undefined;
   description?: string | undefined;
   align?: "start" | "center";
-}) {
+}) => {
   return (
     <div className={headContainerClass({ align })}>
       <span className="flex items-center gap-3">
@@ -30,7 +30,7 @@ export function SectionHead({
               <title>Arrow Icon</title>
               <use href="#arrow-icon" />
             </svg>
-            <span className="text-[#FFCA68] uppercase tracking-[0.16em] text-base">
+            <span className="text-gold-800 font-medium uppercase tracking-5xl text-base">
               {label}
             </span>
             <svg width="21" height="10">
@@ -43,7 +43,7 @@ export function SectionHead({
           </>
         )}
       </span>
-      <h2 className="font-semibold text-[3rem] leading-snug align-[-20px]">
+      <h2 className="font-bold text-[3.5rem] leading-[3.75rem] font-display text-balance">
         {title}
       </h2>
       {description && (
@@ -53,4 +53,4 @@ export function SectionHead({
       )}
     </div>
   );
-}
+};
