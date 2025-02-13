@@ -40,33 +40,29 @@ const oceanText = [
 export const Test = () => {
   return (
     <>
-      <div className="w-dvh mx-auto p-10 bg-ocean-0">
-        <div className="flex gap-4">
-          {oceanBG.map((color) => (
-            <div key={color} className={`h-10 w-10 ${color}`} />
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          {oceanText.map((color) => (
-            <h2 key={color} className={`text-4xl ${color}`}>
-              Hello
-            </h2>
-          ))}
-        </div>
+      <div className="flex gap-4">
+        {oceanBG.map((color) => (
+          <div key={color} className={`h-10 w-10 ${color}`} />
+        ))}
       </div>
-      <div className="w-dvh mx-auto p-10 bg-ocean-100">
-        <div className="flex gap-4">
-          {oceanBG.map((color) => (
-            <div key={color} className={`h-10 w-10 ${color}`} />
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          {oceanText.map((color) => (
-            <h2 key={color} className={`text-4xl ${color}`}>
-              Hello
-            </h2>
-          ))}
-        </div>
+      <div className="flex flex-col gap-4">
+        {oceanText.map((color) => (
+          <h2 key={color} className={`text-4xl ${color}`}>
+            Hello
+          </h2>
+        ))}
+      </div>
+      <div className="flex gap-4">
+        {oceanBG.map((color) => (
+          <div key={color} className={`h-10 w-10 ${color}`} />
+        ))}
+      </div>
+      <div className="flex flex-col gap-4">
+        {oceanText.map((color) => (
+          <h2 key={color} className={`text-4xl ${color}`}>
+            Hello
+          </h2>
+        ))}
       </div>
     </>
   );

@@ -30,7 +30,7 @@ export const SectionHead = ({
               <title>Arrow Icon</title>
               <use href="#arrow-icon" />
             </svg>
-            <span className="text-gold-800 font-medium uppercase tracking-5xl text-base">
+            <span className="font-medium text-base text-gold-800 uppercase tracking-5xl">
               {label}
             </span>
             <svg width="21" height="10">
@@ -43,11 +43,11 @@ export const SectionHead = ({
           </>
         )}
       </span>
-      <h2 className="font-bold text-[3.5rem] leading-[3.75rem] font-display text-balance">
+      <h2 className="text-balance font-bold font-display text-[3.5rem] leading-[3.75rem]">
         {title}
       </h2>
       {description && (
-        <p className="font-sans text-[#7494AF] text-lg leading-8 max-w-xl py-2">
+        <p className="py-2 font-sans text-lg text-ocean-925/50 leading-8">
           {description}
         </p>
       )}

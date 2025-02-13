@@ -32,8 +32,8 @@ const navContainer = cva(
 );
 
 const navigationLinks = [
-  { name: "Home", to: "/" },
   { name: "About", to: "/about" },
+  { name: "Team", to: "/team" },
   { name: "Contact", to: "/contact" },
 ] as const;
 
@@ -74,7 +74,7 @@ export function Navbar() {
 
           {/* Desktop Menu - Centered */}
           <div className="hidden flex-1 justify-center md:flex">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.to}

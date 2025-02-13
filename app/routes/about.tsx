@@ -16,7 +16,7 @@ export function loader({ context }: Route.LoaderArgs) {
 
 export default function About({ loaderData }: Route.ComponentProps) {
   return (
-    <main className="flex min-h-dvh flex-col items-stretch justify-center bg-ocean-100">
+    <main className="flex min-h-dvh flex-col items-stretch justify-center">
       <Navbar />
       <Hero />
     </main>
