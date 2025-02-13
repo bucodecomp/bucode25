@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="antialiased bg-ocean-100">
+      <body className="antialiased bg-ocean-100 selection:bg-ocean-600/10 selection:text-ocean-500">
         <IconSprite />
         {children}
         <ScrollRestoration />

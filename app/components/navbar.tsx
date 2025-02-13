@@ -61,7 +61,14 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src="/logo.svg" alt="Logo" className="h-6 w-auto" />
+              <svg
+                width={105}
+                height={24}
+                className="h-6 w-auto text-ocean-800 hover:text-ocean-600 transition-colors"
+              >
+                <title>Bucode Logo</title>
+                <use href="#bucode-logo" />
+              </svg>
             </Link>
           </div>
 
