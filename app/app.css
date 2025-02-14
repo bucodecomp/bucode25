@@ -81,9 +81,9 @@
   --color-ocean-200: oklch(21.02% 0.059 230);
   --color-ocean-300: oklch(30.11% 0.086 230);
   --color-ocean-400: oklch(40.63% 0.115 230);
-  --color-ocean-500: oklch(50.57% 0.143 230);
-  --color-ocean-600: oklch(58.95% 0.186 230);
-  --color-ocean-700: oklch(65.68% 0.177 230);
+  --color-ocean-500: oklch(50.57% 0.153 230);
+  --color-ocean-600: oklch(58.95% 0.196 230);
+  --color-ocean-700: oklch(65.68% 0.187 230);
   --color-ocean-800: oklch(73.67% 0.142 230);
   --color-ocean-900: oklch(81.35% 0.097 230);
   --color-ocean-925: oklch(85.35% 0.075 230);
@@ -100,10 +100,10 @@
   --color-gold-300: oklch(30.11% 0.086 80);
   --color-gold-400: oklch(40.63% 0.115 80);
   --color-gold-500: oklch(50.57% 0.143 80);
-  --color-gold-600: oklch(58.95% 0.186 80);
-  --color-gold-700: oklch(65.68% 0.177 80);
-  --color-gold-800: oklch(73.67% 0.142 80);
-  --color-gold-900: oklch(81.35% 0.097 80);
+  --color-gold-600: oklch(62.95% 0.166 80);
+  --color-gold-700: oklch(76.68% 0.197 80);
+  --color-gold-800: oklch(73.67% 0.162 80);
+  --color-gold-900: oklch(81.35% 0.127 80);
   --color-gold-925: oklch(85.35% 0.075 80);
   --color-gold-950: oklch(89.22% 0.055 80);
   --color-gold-975: oklch(93.11% 0.035 80);

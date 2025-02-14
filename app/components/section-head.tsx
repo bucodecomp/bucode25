@@ -30,7 +30,7 @@ export const SectionHead = ({
               <title>Arrow Icon</title>
               <use href="#arrow-icon" />
             </svg>
-            <span className="font-medium text-base text-gold-800 uppercase tracking-5xl">
+            <span className="font-medium text-base text-gold-700 uppercase tracking-5xl">
               {label}
             </span>
             <svg width="21" height="10">
