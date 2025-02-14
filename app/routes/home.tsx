@@ -3,6 +3,7 @@ import { Navbar } from "~/components/navbar";
 import { SectionHead } from "~/components/section-head";
 import { Test } from "~/components/test";
 import type { Route } from "./+types/home";
+import { FeaturesSection } from "~/components/home/features-section";
 
 export function meta({ error }: Route.MetaArgs) {
   console.log(error);
@@ -24,6 +25,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <main className="flex min-h-dvh flex-col items-stretch justify-center">
       <Navbar />
       <Hero />
+      <FeaturesSection />
       <Test />
     </main>
   );
