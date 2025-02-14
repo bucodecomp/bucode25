@@ -33,7 +33,7 @@ const FeatureCard = ({ title, description, icon, stars = false }: {
             </div>
             <div className="text-center flex flex-col gap-2">
                 <h1 className="font-display font-semibold text-2xl leading-8 tracking-[-0.01em]">{title}</h1>
-                <p className="leading-8 text-[#7494AF]">{description}</p>
+                <p className="leading-8 text-ocean-925/50">{description}</p>
             </div>
             { stars && <FourStars /> }
         </div>
