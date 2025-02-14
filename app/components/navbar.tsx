@@ -1,3 +1,4 @@
+import { RiArrowRightLine } from "@remixicon/react";
 import clsx from "clsx";
 import { cva } from "cva";
 import { useEffect, useState } from "react";
@@ -81,7 +82,7 @@ export function Navbar() {
                   className={navLink({ variant: "desktop" })}
                 >
                   <span className="relative z-10">{link.name}</span>
-                  <div className="absolute inset-0 scale-80 rounded-md bg-ocean-900/5 opacity-0 ring-offset-2 transition-all duration-1000 ease-out-expo focus:ring-2 focus:ring-ocean-200 focus:ring-offset-ocean-100 group-hover:scale-100 group-hover:opacity-100" />
+                  <div className="absolute inset-0 scale-y-50 rounded-md bg-ocean-900/5 opacity-0 ring-offset-2 transition-all duration-1000 ease-out-expo focus:ring-2 focus:ring-ocean-200 focus:ring-offset-ocean-100 group-hover:scale-y-100 group-hover:opacity-100" />
                 </Link>
               ))}
             </div>
@@ -95,21 +96,7 @@ export function Navbar() {
             })}
           >
             <span>Register</span>
-
-            <svg
-              aria-hidden="true"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="-mr-1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.7809 7.33327L7.2049 3.75726L8.1477 2.81445L13.3332 7.99993L8.1477 13.1853L7.2049 12.2425L10.7809 8.6666H2.6665V7.33327H10.7809Z"
-                fill="currentColor"
-              />
-            </svg>
+            <RiArrowRightLine className="-mr-1 h-4 w-4" />
           </Link>
 
           {/* Mobile menu button */}

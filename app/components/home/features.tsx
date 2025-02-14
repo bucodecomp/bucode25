@@ -21,7 +21,7 @@ const FourStars = () => {
         <svg
           width="27"
           height="27"
-          opacity="30%"
+          opacity="12%"
           transform="translate(-.5 -.5)"
         >
           <title>Star</title>
@@ -29,19 +29,19 @@ const FourStars = () => {
         </svg>
       </div>
       <div className={starClass({ position: "bottomLeft" })}>
-        <svg width="27" height="27" opacity="30%" transform="translate(-.5 .5)">
+        <svg width="27" height="27" opacity="12%" transform="translate(-.5 .5)">
           <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
       <div className={starClass({ position: "topRight" })}>
-        <svg width="27" height="27" opacity="30%" transform="translate(.5 -.5)">
+        <svg width="27" height="27" opacity="12%" transform="translate(.5 -.5)">
           <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
       <div className={starClass({ position: "bottomRight" })}>
-        <svg width="27" height="27" opacity="30%" transform="translate(.5 .5)">
+        <svg width="27" height="27" opacity="12%" transform="translate(.5 .5)">
           <title>Star</title>
           <use href="#cross-icon" />
         </svg>
@@ -70,7 +70,7 @@ const FeatureCard = ({
         isMiddle && "border-ocean-1000/10",
       )}
     >
-      <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-linear-[180deg,#00000000,#00000004] ring ring-ocean-1000/10">
+      <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-linear-[180deg,var(--color-ocean-100),var(--color-ocean-100)] ring ring-ocean-1000/10">
         <div className="flex h-6 w-6 items-center justify-center">{icon}</div>
       </div>
       <div className="flex flex-col gap-2 text-center">
@@ -94,7 +94,7 @@ export const Features = () => {
           description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
           align="center"
         />
-        <div className="relative grid w-full grid-cols-1 items-stretch border border-ocean-1000/10 bg-ocean-75/50 md:grid-cols-3">
+        <div className="relative grid w-full grid-cols-1 items-stretch border border-ocean-1000/2 md:grid-cols-3">
           <FeatureCard
             title="Thrilling Competition"
             description="As we get closer to the exciting moments, the countdown has started."
