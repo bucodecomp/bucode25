@@ -17,12 +17,13 @@ const navLink = cva(
 );
 
 const navContainer = cva(
-  "max-w-7xl mx-auto px-4 transition-all duration-200 ring-1 ring-ocean-100/0 rounded-2xl",
+  "mx-auto transition-all duration-500 ring-1 ring-ocean-100/0 rounded-2xl px-6 md:px-4 ",
   {
     variants: {
       scrolled: {
-        true: "bg-ocean-100/96 ring-ocean-25",
-        false: "backdrop-blur-none",
+        false:
+          "w-full max-w-screen-2xl md:px-10 bg-ocean-25/4 backdrop-blur-[1px]",
+        true: "bg-ocean-25/96 ring-ocean-900/5 max-w-screen-sm backdrop-blur-[4px]",
       },
     },
     defaultVariants: {
@@ -43,7 +44,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 128);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -58,7 +59,6 @@ export function Navbar() {
     <nav className="fixed top-8 right-0 left-0 z-50 px-4">
       <div className={navContainer({ scrolled: isScrolled })}>
         <div className="flex h-16 items-center">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center py-2">
               <svg
@@ -72,7 +72,6 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Menu - Centered */}
           <div className="hidden flex-1 justify-center md:flex">
             <div className="flex items-center gap-2">
               {navigationLinks.map((link) => (
@@ -91,7 +90,8 @@ export function Navbar() {
           <Link
             to="/register"
             className={primaryButton({
-              size: "md",
+              size: "sm",
+              className: "hidden md:flex",
             })}
           >
             <span>Register</span>

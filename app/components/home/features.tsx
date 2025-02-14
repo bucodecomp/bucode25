@@ -1,26 +1,48 @@
+import { RiRocketLine } from "@remixicon/react";
+import clsx from "clsx";
 import { cva } from "cva";
 import { SectionHead } from "../section-head";
+
+const starClass = cva("absolute h-[27px] w-[27px]", {
+  variants: {
+    position: {
+      topLeft: "-translate-x-1/2 -translate-y-1/2 top-0 left-0",
+      bottomLeft: "-translate-x-1/2 translate-y-1/2 bottom-0 left-0",
+      topRight: "translate-x-1/2 -translate-y-1/2 top-0 right-0",
+      bottomRight: "translate-x-1/2 translate-y-1/2 bottom-0 right-0",
+    },
+  },
+});
 
 const FourStars = () => {
   return (
     <>
-      <div className="absolute w-[27px] h-[27px] -translate-x-1/2 -translate-y-1/2 top-0 left-0">
-        <svg width="27" height="27" opacity="30%">
+      <div className={starClass({ position: "topLeft" })}>
+        <svg
+          width="27"
+          height="27"
+          opacity="30%"
+          transform="translate(-.5 -.5)"
+        >
+          <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
-      <div className="absolute w-[27px] h-[27px] -translate-x-1/2 translate-y-1/2 bottom-0 left-0">
-        <svg width="27" height="27" opacity="30%">
+      <div className={starClass({ position: "bottomLeft" })}>
+        <svg width="27" height="27" opacity="30%" transform="translate(-.5 .5)">
+          <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
-      <div className="absolute w-[27px] h-[27px] translate-x-1/2 -translate-y-1/2 top-0 right-0">
-        <svg width="27" height="27" opacity="30%">
+      <div className={starClass({ position: "topRight" })}>
+        <svg width="27" height="27" opacity="30%" transform="translate(.5 -.5)">
+          <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
-      <div className="absolute w-[27px] h-[27px] translate-x-1/2 translate-y-1/2 bottom-0 right-0">
-        <svg width="27" height="27" opacity="30%">
+      <div className={starClass({ position: "bottomRight" })}>
+        <svg width="27" height="27" opacity="30%" transform="translate(.5 .5)">
+          <title>Star</title>
           <use href="#cross-icon" />
         </svg>
       </div>
@@ -33,17 +55,22 @@ const FeatureCard = ({
   description,
   icon,
   stars = false,
+  isMiddle = false,
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
   stars?: boolean;
+  isMiddle?: boolean;
 }) => {
   return (
     <div
-      className={`relative flex max-w-lg flex-1 flex-col items-center gap-4 px-6 py-10`}
+      className={clsx(
+        "relative flex flex-col items-center gap-4 px-6 py-10",
+        isMiddle && "border-ocean-1000/10",
+      )}
     >
-      <div className="flex h-16 w-20 items-center justify-center rounded-lg border border-white/4 bg-[#091620]/2 bg-linear-[180deg,#fff0,#ffffff0a]">
+      <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-linear-[180deg,#00000000,#00000004] ring ring-ocean-1000/10">
         <div className="flex h-6 w-6 items-center justify-center">{icon}</div>
       </div>
       <div className="flex flex-col gap-2 text-center">
@@ -57,57 +84,37 @@ const FeatureCard = ({
   );
 };
 
-const ResponsiveSeperator = () => {
-  return (
-    <>
-      <div className="lg:w-[1px] lg:self-stretch lg:bg-white/4" />
-      <div className="h-[1px] w-full bg-white/4 lg:hidden" />
-    </>
-  );
-};
-
 export const Features = () => {
   return (
-    <div className="container flex flex-col items-center gap-16 px-[105px] py-[120px]">
-      <SectionHead
-        label="Why BuCode?"
-        title="What To Expect..."
-        description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
-        align="center"
-      />
-      <div className="relative flex w-full flex-col items-stretch border border-white/4 bg-[#255C8B]/2 lg:flex-row">
-        <FeatureCard
-          title="Thrilling Competition"
-          description="As we get closer to the exciting moments, the countdown has started."
-          icon={
-            <svg width="20" height="20">
-              <use href="#speedometer-icon" />
-            </svg>
-          }
+    <section className="py-64">
+      <div className="container mx-auto flex max-w-screen-2xl flex-col items-center gap-16 px-4 md:px-10">
+        <SectionHead
+          label="Why BuCode?"
+          title="What To Expect..."
+          description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
+          align="center"
         />
-        <ResponsiveSeperator />
-        <FeatureCard
-          title="Rewarding Experience"
-          description="As we get closer to the exciting moments, the countdown has started."
-          icon={
-            <svg width="20" height="20">
-              <use href="#award-icon" />
-            </svg>
-          }
-          stars
-        />
-        <ResponsiveSeperator />
-        <FeatureCard
-          title="Unforgettable Atmosphere"
-          description="As we get closer to the exciting moments, the countdown has started."
-          icon={
-            <svg width="20" height="20">
-              <use href="#rocket-icon" />
-            </svg>
-          }
-        />
-        <FourStars />
+        <div className="relative grid w-full grid-cols-1 items-stretch border border-ocean-1000/10 bg-ocean-75/50 md:grid-cols-3">
+          <FeatureCard
+            title="Thrilling Competition"
+            description="As we get closer to the exciting moments, the countdown has started."
+            icon={<RiRocketLine />}
+          />
+          <FeatureCard
+            title="Rewarding Experience"
+            description="As we get closer to the exciting moments, the countdown has started."
+            icon={<RiRocketLine />}
+            stars
+            isMiddle
+          />
+          <FeatureCard
+            title="Unforgettable Atmosphere"
+            description="As we get closer to the exciting moments, the countdown has started."
+            icon={<RiRocketLine />}
+          />
+          <FourStars />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
