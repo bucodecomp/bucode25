@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { CTA } from "~/components/home/cta";
 import { Features } from "~/components/home/features";
 import { Hero } from "~/components/home/hero";
 import { Navbar } from "~/components/navbar";
@@ -26,6 +27,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <Navbar />
       <Hero />
       <Features />
+      <CTA />
     </main>
   );
 }
