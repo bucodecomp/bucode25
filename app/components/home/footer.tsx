@@ -65,7 +65,7 @@ const FooterColumn = ({
   }[];
 }) => {
   return (
-    <div className="flex flex-1 flex-col items-start gap-3">
+    <div className="flex flex-col items-start gap-3">
       <h6 className="font-display text-[#7494AF] text-base uppercase leading-[1.125rem] tracking-5xl">
         {title}
       </h6>
@@ -84,8 +84,8 @@ export const Footer = () => {
   return (
     <div className="w-full px-6 py-20">
       <div className="border-white/4 border-y-[1px] px-0 py-10 sm:px-8 md:px-24">
-        <div className="flex flex-col gap-16 px-4 py-6 sm:flex-row sm:gap-8">
-          <Link to="/" className="flex flex-1 justify-start">
+        <div className="grid grid-cols-1 gap-8 gap-y-16 px-4 py-6 sm:grid-cols-2 md:grid-cols-4">
+          <Link to="/" className="flex justify-start">
             <svg
               width={105}
               height={24}
