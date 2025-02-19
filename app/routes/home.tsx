@@ -3,6 +3,7 @@ import { CTA } from "~/components/home/cta";
 import { Features } from "~/components/home/features";
 import { Footer } from "~/components/home/footer";
 import { Hero } from "~/components/home/hero";
+import { Teaser } from "~/components/home/teaser";
 import { Navbar } from "~/components/navbar";
 import type { Route } from "./+types/home";
 
@@ -28,6 +29,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <Navbar />
       <Hero />
       <Features />
+      <Teaser />
       <CTA />
       <Footer />
     </main>
