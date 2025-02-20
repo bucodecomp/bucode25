@@ -45,7 +45,7 @@ export const Counter = () => {
   const [activeTab, setActiveTab] = useState<string>("qualification");
 
   return (
-    <div className="h-dvh w-dvg p-4">
+    <div className="w-dvg p-4">
       <div className="h-full rounded-4xl border border-[#416279]/24 bg-[#081016] px-10 py-30">
         <div className="flex h-full flex-col items-center gap-12">
           <SectionHead
@@ -54,8 +54,8 @@ export const Counter = () => {
             description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
             align="center"
           />
-          <div className="flex w-[720px] flex-col items-center gap-10">
-            <div className="flex w-fit items-center overflow-hidden rounded-[8px] border border-[#446477]/40">
+          <div className="flex flex-col items-center gap-10">
+            <div className="flex w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
               {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
               <div
                 className={`flex w-[144px] cursor-pointer items-center justify-center ${qualificationClass({ active: activeTab === "qualification" })} px-6 py-1 font-medium font-sans text-base leading-8`}
@@ -83,6 +83,28 @@ export const Counter = () => {
                 onClick={() => setActiveTab("final")}
               >
                 Finals
+              </div>
+            </div>
+            <div className="flex w-full flex-col gap-6">
+              <div className="flex w-full items-center gap-3">
+                <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+                <h1 className="pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl">
+                  April 20, 2025
+                </h1>
+                <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+              </div>
+              <p className="max-w-[720px]">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+                voluptates cum officia suscipit architecto rerum mollitia vitae
+                quas! Temporibus assumenda, est aspernatur ipsum optio adipisci
+                a autem qui beatae consequatur?
+              </p>
+              <div className="flex w-full items-center gap-3">
+                <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+                <h1 className="pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl">
+                  12:00 PM
+                </h1>
+                <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
               </div>
             </div>
           </div>
