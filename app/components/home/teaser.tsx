@@ -1,6 +1,6 @@
 import { RiArrowRightLine, RiRocketLine } from "@remixicon/react";
 import { Link } from "react-router";
-import { primaryButton, secondaryButton } from "../button";
+import { Vibration, primaryButton, secondaryButton } from "../button";
 import { SectionHead } from "../section-head";
 
 const TeaserCard = ({
@@ -33,7 +33,7 @@ export const Teaser = () => {
           description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
           align="start"
         />
-        <div className="flex w-full flex-col items-center gap-8">
+        <div className="flex w-full flex-col items-center gap-10">
           <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-y-0">
             <TeaserCard
               title="Thrilling Competition"
@@ -51,7 +51,8 @@ export const Teaser = () => {
               icon={<RiRocketLine size={24} />}
             />
           </div>
-          <div>
+          <div className="flex items-center gap-1.5">
+            <Vibration position="left" />
             <Link
               to="/about"
               className={`${primaryButton({ size: "md" })} w-fit`}
@@ -59,6 +60,7 @@ export const Teaser = () => {
               <span>BuCode 2024 Recap</span>
               <RiArrowRightLine className="-mr-1 h-4 w-4" />
             </Link>
+            <Vibration position="right" />
           </div>
         </div>
       </div>

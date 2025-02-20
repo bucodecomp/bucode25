@@ -28,3 +28,17 @@ export const secondaryButton = cva(
     },
   },
 );
+
+export const Vibration = ({ position }: { position: "left" | "right" }) => {
+  return (
+    <div className="flex h-full items-center gap-1">
+      {position === "right" && (
+        <div className="h-8 w-[1px] bg-[radial-gradient(circle_at_center,_rgb(99,140,164,1.0),_rgb(99,140,164,0.0))]" />
+      )}
+      <div className="h-5 w-[1px] bg-[radial-gradient(circle_at_center,_rgb(99,140,164,1.0),_rgb(99,140,164,0.0))]" />
+      {position === "left" && (
+        <div className="h-8 w-[1px] bg-[radial-gradient(circle_at_center,_rgb(99,140,164,1.0),_rgb(99,140,164,0.0))]" />
+      )}
+    </div>
+  );
+};

@@ -1,6 +1,8 @@
-import { RiRocketLine } from "@remixicon/react";
+import { RiArrowRightLine, RiRocketLine } from "@remixicon/react";
 import clsx from "clsx";
 import { cva } from "cva";
+import { Link } from "react-router";
+import { Vibration, primaryButton } from "../button";
 import { SectionHead } from "../section-head";
 
 const starClass = cva("absolute h-[27px] w-[27px]", {
@@ -113,6 +115,17 @@ export const Features = () => {
             icon={<RiRocketLine />}
           />
           <FourStars />
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Vibration position="left" />
+          <Link
+            to="/about"
+            className={`${primaryButton({ size: "md" })} w-fit`}
+          >
+            <span>Competition Rules</span>
+            <RiArrowRightLine className="-mr-1 h-4 w-4" />
+          </Link>
+          <Vibration position="right" />
         </div>
       </div>
     </section>
