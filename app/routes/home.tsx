@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Counter } from "~/components/home/counter";
 import { CTA } from "~/components/home/cta";
 import { Features } from "~/components/home/features";
 import { Footer } from "~/components/home/footer";
@@ -30,6 +31,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <Hero />
       <Features />
       <Teaser />
+      <Counter />
       <CTA />
       <Footer />
     </main>
