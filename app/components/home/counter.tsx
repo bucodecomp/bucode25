@@ -1,9 +1,10 @@
 import { RiArrowRightLine } from "@remixicon/react";
 import { cva } from "cva";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Vibration, primaryButton } from "../button";
 import { SectionHead } from "../section-head";
+import { SlidingNumber } from "../ui/sliding-number";
 
 const qualificationClass = cva("", {
   variants: {
@@ -45,10 +46,14 @@ const CounterDigit = ({
   digit,
   timeUnit,
 }: { digit: number; timeUnit: string }) => {
+  if (digit === 1) {
+    timeUnit = timeUnit.slice(0, -1);
+  }
+
   return (
     <div className="flex w-[120px] flex-col items-center">
       <div className="font-sans font-semibold text-[#C9E9FF] text-[64px] leading-18 tracking-[-0.01em]">
-        {digit}
+        <SlidingNumber value={digit} padStart={true} />
       </div>
       <div className="font-medium font-sans text-[#7494AF] text-base leading-6">
         {timeUnit}
@@ -67,9 +72,40 @@ const DigitSeperator = ({ visible }: { visible: boolean }) => {
   );
 };
 
+const getRemainingTime = () => {
+  const now = new Date();
+  const target = new Date("2025-04-20T12:00:00Z");
+  target.setHours(target.getHours() - 3);
+  const diff = target.getTime() - now.getTime();
+  const remDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const remHours = Math.floor(
+    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  const remMinutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const remSeconds = Math.floor((diff % (1000 * 60)) / 1000);
+  return { remDays, remHours, remMinutes, remSeconds };
+};
+
 export const Counter = () => {
+  const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime();
+
   const [activeTab, setActiveTab] = useState<string>("qualification");
-  console.log(activeTab);
+  const [days, setDays] = useState<number>(remDays);
+  const [hours, setHours] = useState<number>(remHours);
+  const [minutes, setMinutes] = useState<number>(remMinutes);
+  const [seconds, setSeconds] = useState<number>(remSeconds);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime();
+      setDays(remDays);
+      setHours(remHours);
+      setMinutes(remMinutes);
+      setSeconds(remSeconds);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-dvg p-4">
@@ -121,13 +157,13 @@ export const Counter = () => {
                 <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
               </div>
               <div className="grid grid-cols-3 place-items-center gap-y-12 md:grid-cols-7 md:gap-y-0">
-                <CounterDigit digit={19} timeUnit="days" />
+                <CounterDigit digit={days} timeUnit="days" />
                 <DigitSeperator visible={true} />
-                <CounterDigit digit={5} timeUnit="hours" />
+                <CounterDigit digit={hours} timeUnit="hours" />
                 <DigitSeperator visible={false} />
-                <CounterDigit digit={7} timeUnit="minutes" />
+                <CounterDigit digit={minutes} timeUnit="minutes" />
                 <DigitSeperator visible={true} />
-                <CounterDigit digit={32} timeUnit="seconds" />
+                <CounterDigit digit={seconds} timeUnit="seconds" />
               </div>
               <div className="flex w-full items-center gap-3">
                 <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
