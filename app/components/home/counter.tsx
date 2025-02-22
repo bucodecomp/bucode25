@@ -82,7 +82,7 @@ export const Counter = () => {
             align="center"
           />
           <div className="flex flex-col items-center gap-10">
-            <div className="flex w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
+            <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
               {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
               <div
                 className={`flex w-[144px] cursor-pointer items-center justify-center ${qualificationClass({ active: activeTab === "qualification" })} px-6 py-1 font-medium font-sans text-base leading-8`}
