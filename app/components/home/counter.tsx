@@ -72,10 +72,10 @@ const DigitSeperator = ({ visible }: { visible: boolean }) => {
   );
 };
 
-const getRemainingTime = () => {
+const getRemainingTime = (targetOrg: Date) => {
   const now = new Date();
-  const target = new Date("2025-04-20T12:00:00Z");
-  target.setHours(target.getHours() - 3);
+  const target = new Date(targetOrg);
+  // target.setHours(target.getHours() - 3);
   const diff = target.getTime() - now.getTime();
   const remDays = Math.floor(diff / (1000 * 60 * 60 * 24));
   const remHours = Math.floor(
@@ -86,10 +86,36 @@ const getRemainingTime = () => {
   return { remDays, remHours, remMinutes, remSeconds };
 };
 
-export const Counter = () => {
-  const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime();
+const DateWithCoolLines = ({ date }: { date: string }) => {
+  return (
+    <div className="flex w-full items-center gap-3">
+      <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+      <h1 className="pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl">
+        {date}
+      </h1>
+      <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+    </div>
+  );
+};
 
-  const [activeTab, setActiveTab] = useState<string>("qualification");
+const DateCounter = ({ date }: { date: Date }) => {
+  const month = date.toLocaleString("en-US", {
+    month: "long",
+    timeZone: "UTC",
+  });
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const [hour, amPm] = date
+    .toLocaleString("en-US", {
+      hour: "numeric",
+      hour12: true,
+      timeZone: "UTC",
+    })
+    .split(" ");
+  const minute = date.getMinutes();
+
+  const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime(date);
+
   const [days, setDays] = useState<number>(remDays);
   const [hours, setHours] = useState<number>(remHours);
   const [minutes, setMinutes] = useState<number>(remMinutes);
@@ -97,7 +123,8 @@ export const Counter = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime();
+      const { remDays, remHours, remMinutes, remSeconds } =
+        getRemainingTime(date);
       setDays(remDays);
       setHours(remHours);
       setMinutes(remMinutes);
@@ -105,7 +132,29 @@ export const Counter = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [date]);
+
+  return (
+    <div className="flex w-full flex-col gap-6">
+      <DateWithCoolLines date={`${month} ${day}, ${year}`} />
+      <div className="grid grid-cols-3 place-items-center gap-y-12 md:grid-cols-7 md:gap-y-0">
+        <CounterDigit digit={days} timeUnit="days" />
+        <DigitSeperator visible={true} />
+        <CounterDigit digit={hours} timeUnit="hours" />
+        <DigitSeperator visible={false} />
+        <CounterDigit digit={minutes} timeUnit="minutes" />
+        <DigitSeperator visible={true} />
+        <CounterDigit digit={seconds} timeUnit="seconds" />
+      </div>
+      <DateWithCoolLines
+        date={`${hour.padStart(2, "0")}:${minute.toString().padStart(2, "0")} ${amPm}`}
+      />
+    </div>
+  );
+};
+
+export const Counter = () => {
+  const [activeTab, setActiveTab] = useState<string>("qualification");
 
   return (
     <div className="w-dvg p-4">
@@ -148,31 +197,11 @@ export const Counter = () => {
                 Finals
               </div>
             </div>
-            <div className="flex w-full flex-col gap-6">
-              <div className="flex w-full items-center gap-3">
-                <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-                <h1 className="pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl">
-                  April 20, 2025
-                </h1>
-                <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-              </div>
-              <div className="grid grid-cols-3 place-items-center gap-y-12 md:grid-cols-7 md:gap-y-0">
-                <CounterDigit digit={days} timeUnit="days" />
-                <DigitSeperator visible={true} />
-                <CounterDigit digit={hours} timeUnit="hours" />
-                <DigitSeperator visible={false} />
-                <CounterDigit digit={minutes} timeUnit="minutes" />
-                <DigitSeperator visible={true} />
-                <CounterDigit digit={seconds} timeUnit="seconds" />
-              </div>
-              <div className="flex w-full items-center gap-3">
-                <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-                <h1 className="relative pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl before:absolute before:bottom-0 before:h-[1px] before:w-full before:bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))] before:['']">
-                  12:00 PM
-                </h1>
-                <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-              </div>
-            </div>
+            {activeTab === "qualification" ? (
+              <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
+            ) : (
+              <DateCounter date={new Date("2025-04-23T14:15:00Z")} />
+            )}
           </div>
           <div className="flex items-center gap-1.5">
             <Vibration position="left" />
