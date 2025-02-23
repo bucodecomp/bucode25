@@ -13,13 +13,13 @@ export const Tribute = () => {
           description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
           align="start"
         />
-        <div className="flex h-[320px] gap-6">
+        <div className="flex h-auto flex-col gap-6 md:h-[320px] md:flex-row">
           <img
             src="/images/tribute.png"
             alt="Tribute"
             className="w-[480px] rounded-[12px] object-cover"
           />
-          <div className="flex flex-1 flex-col gap-6 px-10 py-24">
+          <div className="flex flex-1 flex-col gap-6 px-2 py-6 md:px-10 md:py-24">
             <div className="flex flex-col gap-2">
               <h1 className="font-bold font-display text-[#C9E9FF] text-[40px] leading-12 tracking-[-0.01em]">
                 For a Better Day
