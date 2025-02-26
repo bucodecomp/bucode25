@@ -50,8 +50,8 @@ const pClass = "font-sans text-lg leading-8 text-ocean-925/75";
 
 export const Rules = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center py-40">
-      <div className="flex max-w-3xl flex-col items-center gap-20 md:gap-32">
+    <div className="container mx-auto flex flex-col items-center py-40 px-12">
+      <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-32">
         <SectionHead
           title="Knowledge Repository."
           description="Explore the essential information about the BuCode competition."
@@ -86,6 +86,13 @@ export const Rules = () => {
                 <li className={pClass}>{content.pr.p4}</li>
               </ul>
             </div>
+            <img
+              src="/images/tribute.png"
+              alt="Team"
+              className="rounded-[12px] object-cover"
+              height={480}
+              width={480 * 1.5}
+            />
             <div className="flex flex-col gap-3">
               <h2 className={hClass}>{content.cr.title}</h2>
               <ul className="ml-4 flex list-disc flex-col gap-4">
