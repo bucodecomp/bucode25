@@ -243,7 +243,7 @@ const pClass = "font-sans text-lg leading-8 text-ocean-925/75";
 
 export const Rules = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center py-40 px-12">
+    <div className="container mx-auto flex flex-col items-center px-12 py-40">
       <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-32">
         <SectionHead
           title="Knowledge Repository."
@@ -312,7 +312,7 @@ export const Rules = () => {
               </ul>
             </div>
           </div>
-          <hr className="my-6 w-full border-none h-[1px] bg-[rgb(255,255,255,0.04)]" />
+          <hr className="my-6 h-[1px] w-full border-none bg-[rgb(255,255,255,0.04)]" />
           <p className="text-ocean-925/50 text-sm">
             <span>{content.contact}</span>
             <a className="underline" href="mailto:contact@bucodecomp.com">
