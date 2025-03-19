@@ -5,7 +5,6 @@ import { Navbar } from "~/components/navbar";
 import type { Route } from "./+types/home";
 
 export function meta({ error }: Route.MetaArgs) {
-  console.log(error);
   return [
     { title: "About BuCode" },
     { name: "description", content: "Welcome to React Router!" },

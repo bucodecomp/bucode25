@@ -33,7 +33,7 @@ const HeroBackground = () => {
                 width="805.09"
                 height="401.684"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
                 <feFlood flood-opacity="0" result="BackgroundImageFix" />
                 <feBlend
@@ -77,7 +77,7 @@ const HeroBackground = () => {
 
 export const Hero = () => {
   return (
-    <div className="flex h-dvh w-dvg flex-col items-stretch p-3">
+    <div className="flex h-[max(100dvh,60rem)] w-dvg flex-col items-stretch p-3">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl p-4 pt-24">
         <HeroBackground />
         <div className="container mx-auto max-w-screen-2xl px-4 md:px-10">

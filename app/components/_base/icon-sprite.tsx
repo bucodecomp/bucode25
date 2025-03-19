@@ -98,7 +98,7 @@ export const IconSprite = () => {
           opacity="1"
           d="M0 13.5H27M13.5 0V13.5L13.5 27"
           stroke="url(#paint0_radial)"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <defs>
           <radialGradient
@@ -109,8 +109,8 @@ export const IconSprite = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(13.5 13.5) rotate(90) scale(13.5)"
           >
-            <stop stop-color="currentColor" stop-opacity="1" />
-            <stop offset="1" stop-color="currentColor" stop-opacity="0" />
+            <stop stopColor="currentColor" stopOpacity="1" />
+            <stop offset="1" stopColor="currentColor" stopOpacity="0" />
           </radialGradient>
         </defs>
       </symbol>

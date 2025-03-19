@@ -18,7 +18,7 @@ const navLink = cva(
 );
 
 const navContainer = cva(
-  "mx-auto transition-all duration-500 ring-1 ring-ocean-100/0 rounded-2xl px-6 md:px-4 ",
+  "mx-auto transition-all ease-out-expo duration-1000 ring-1 ring-ocean-100/0 rounded-2xl px-6 md:px-4 ",
   {
     variants: {
       scrolled: {

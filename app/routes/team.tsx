@@ -3,7 +3,6 @@ import { Navbar } from "~/components/navbar";
 import type { Route } from "./+types/home";
 
 export function meta({ error }: Route.MetaArgs) {
-  console.log(error);
   return [
     { title: "BuCode Team" },
     { name: "description", content: "The people behind BuCode 2025" },
