@@ -13,7 +13,7 @@ const CTABackground = () => {
 
 export const CTA = () => {
   return (
-    <section className="flex w-dvw flex-col items-stretch p-3">
+    <section className="flex w-dvw flex-col items-stretch p-3 pb-40 pt-24">
       <div className="relative mx-auto flex h-full w-full max-w-screen-3xl items-center justify-center overflow-hidden rounded-4xl p-4 py-40">
         <CTABackground />
         <div className="flex flex-col items-center gap-6">

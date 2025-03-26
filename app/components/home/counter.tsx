@@ -127,10 +127,6 @@ const DateCounter = ({ date }: { date: Date }) => {
 export const Counter = () => {
   const [activeTab, setActiveTab] = useState<string>("qualification");
 
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-  };
-
   return (
     <section className="py-32">
       <div className="container mx-auto max-w-screen-4xl p-4">
@@ -143,19 +139,27 @@ export const Counter = () => {
               align="center"
             />
             <div className="flex flex-col items-center gap-10">
-              <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-ocean-975/20">
+              <div
+                role="tablist"
+                aria-label="Countdown Tabs"
+                className="flex h-10 w-fit overflow-hidden rounded-[8px] ring ring-ocean-950/10"
+              >
                 {["qualification", "final"].map((tab) => (
                   <button
                     key={tab}
                     type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab}
+                    aria-controls={`tabpanel-${tab}`}
+                    id={`tab-${tab}`}
                     className={cn(
                       tabTextClass({ active: activeTab === tab }),
                       "flex w-[144px] cursor-pointer items-center justify-center px-6 py-1 font-medium font-sans text-base leading-8",
                     )}
-                    onClick={() => handleTabChange(tab)}
+                    onClick={() => setActiveTab(tab)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
-                        handleTabChange(tab);
+                        setActiveTab(tab);
                       }
                     }}
                     tabIndex={0}
@@ -164,11 +168,18 @@ export const Counter = () => {
                   </button>
                 ))}
               </div>
-              {activeTab === "qualification" ? (
-                <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
-              ) : (
-                <DateCounter date={new Date("2025-04-23T14:15:00Z")} />
-              )}
+              <div
+                role="tabpanel"
+                id={`tabpanel-${activeTab}`}
+                aria-labelledby={`tab-${activeTab}`}
+                className="w-full"
+              >
+                {activeTab === "qualification" ? (
+                  <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
+                ) : (
+                  <DateCounter date={new Date("2025-04-23T14:15:00Z")} />
+                )}
+              </div>
             </div>
             <div className="flex items-center gap-1.5">
               <Vibration position="left" />

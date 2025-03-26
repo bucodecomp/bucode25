@@ -9,7 +9,7 @@ const HeroBackground = () => {
     <div className="absolute inset-0 z-[-1] h-full w-full rounded-4xl bg-ocean-25">
       <div className="pointer-events-none absolute inset-2 rounded-[calc(var(--radius-4xl)_-_calc(2_*_var(--spacing)))] ring-2 ring-ocean-100" />
       <span className="relative z-10 flex h-full items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 flex h-full w-full items-center justify-start">
+        <div className="absolute inset-0 flex h-full w-full origin-left scale-150 items-center justify-start">
           <svg
             width="806"
             height="402"
@@ -76,7 +76,7 @@ const HeroBackground = () => {
 
 export const Hero = () => {
   return (
-    <div className="flex h-[max(100dvh,60rem)] w-dvg flex-col items-stretch p-3">
+    <div className="flex h-[max(100dvh,60rem)] max-h-[1120px] w-dvw flex-col items-stretch p-3">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl p-4 pt-24">
         <HeroBackground />
         <div className="container mx-auto max-w-screen-2xl px-4 md:px-10">
