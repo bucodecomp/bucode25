@@ -3,7 +3,7 @@ import { ICTA } from "~/components/icta";
 import { Navbar } from "~/components/navbar";
 import { SectionHead } from "~/components/section-head";
 import { TeamHero } from "~/components/team/hero";
-import type { TeamMember } from "~/components/team/team-card";
+import { TeamCard, type TeamMember } from "~/components/team/team-card";
 import type { Route } from "./+types/home";
 
 export function meta({ error }: Route.MetaArgs) {
@@ -55,8 +55,41 @@ const team: TeamMember[] = [
     bio: "John Doe is a software engineer at Google",
     image: "/images/team/john-doe.jpg",
     links: {
-      github: undefined,
-      linkedin: undefined,
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "Jane Doe",
+    subteam: subteams[1],
+    bio: "Jane Doe is a software engineer at Google",
+    image: "/images/team/jane-doe.jpg",
+    links: {
+      github: "https://github.com/jane-doe",
+      linkedin: "https://www.linkedin.com/in/jane-doe",
+      twitter: "https://twitter.com/jane-doe",
+    },
+  },
+  {
+    name: "John Doe",
+    subteam: subteams[2],
+    bio: "John Doe is a software engineer at Google",
+    image: "/images/team/john-doe.jpg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "John Doe",
+    subteam: subteams[3],
+    bio: "John Doe is a software engineer at Google",
+    image: "/images/team/john-doe.jpg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
       twitter: undefined,
     },
   },
@@ -70,12 +103,19 @@ export default function Contact({ loaderData }: Route.ComponentProps) {
       {subteams.map((subteam) => {
         return (
           <section key={subteam.name} className="py-16">
-            <div className="container mx-auto flex max-w-screen-2xl flex-col gap-16 px-4 md:px-10">
+            <div className="container mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 md:px-10">
               <SectionHead
                 title={subteam.description}
                 align="start"
                 label={subteam.name}
               />
+              <div className="grid grid-cols-3 gap-6">
+                {team
+                  .filter((e) => e.subteam === subteam)
+                  .map((member) => {
+                    return <TeamCard key={member.name} member={member} />;
+                  })}
+              </div>
             </div>
           </section>
         );

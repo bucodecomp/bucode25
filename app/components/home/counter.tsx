@@ -143,7 +143,7 @@ export const Counter = () => {
               align="center"
             />
             <div className="flex flex-col items-center gap-10">
-              <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
+              <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-ocean-975/20">
                 {["qualification", "final"].map((tab) => (
                   <button
                     key={tab}

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { Fragment } from "react/jsx-runtime";
 import { SectionHead } from "../section-head";
 
 export const linkClass =
@@ -7,15 +8,13 @@ export const linkClass =
 const content = {
   general: {
     title: "General",
-    p1: (
+    paragraphs: [
       <>
         BuCode is an algorithm competition organized by Boğaziçi University
         Computer Engineering Students in collaboration with COMPEC. All
         university students eager to dive into the world of algorithms can
         participate and compete alongside the most ambitious minds in the field.
-      </>
-    ),
-    p2: (
+      </>,
       <>
         To advance to the Final Round, your team needs to successfully complete
         the 12-hour online Qualification Round. The top 15 teams will receive
@@ -26,132 +25,113 @@ const content = {
           algoleague
         </Link>{" "}
         and will adhere to ICPC rules.
-      </>
-    ),
+      </>,
+    ],
   },
   ocp: {
     title: "Official Competition Path",
-    p1: (
+    paragraphs: [
       <>
         The online qualification round is on February 17th at{" "}
         <Link
+          key="algoleague-link"
           className={linkClass}
           to="https://algoleague.com/contest/bucode-bogazici-algorithm-competition-2024-qualification-round/description"
         >
           algoleague.
         </Link>{" "}
         Your team has 12 hours (12:00 pm to 12:00 am) to solve 10-12 questions.
-      </>
-    ),
-    p2: (
-      <>
+      </>,
+      <Fragment key="clarifications">
         You will have the opportunity to seek clarifications from our technical
         team.
-      </>
-    ),
-    p3: (
-      <>
+      </Fragment>,
+      <Fragment key="qualification">
         Based on the qualification results, the first 15 teams which has the
         qualification criteria will qualify to participate in the final round.
-      </>
-    ),
-    p4: <>Results will be announced on February 20th.</>,
-    p5: (
-      <>
+      </Fragment>,
+      <Fragment key="results">
+        Results will be announced on February 20th.
+      </Fragment>,
+      <Fragment key="final">
         The final round is scheduled to take place at Boğaziçi University South
         Campus on March 2.{" "}
         <Link className={linkClass} to="https://algoleague.com">
           algoleague
         </Link>{" "}
         platform will once again be used during the competition.
-      </>
-    ),
-    p6: (
-      <>
+      </Fragment>,
+      <Fragment key="final-round">
         In the final, your team will strive to solve 10-12 questions within a
         16-hour period. It will start at 6:00 pm on March 2 and conclude at
         10:00 am on March 3.
-      </>
-    ),
-    p7: (
-      <>
+      </Fragment>,
+      <Fragment key="awards">
         The top five teams will be honored with awards during the ceremony
         following the competition.
-      </>
-    ),
+      </Fragment>,
+    ],
   },
   pr: {
     title: "Participation Rules",
-    p1: (
-      <>
+    paragraphs: [
+      <Fragment key="eligibility">
         Contestants must be currently enrolled in a bachelor's or associate's
         degree program in Turkey.
-      </>
-    ),
-    p2: (
-      <>
+      </Fragment>,
+      <Fragment key="algoleague">
         All participants are required to have an{" "}
         <Link className={linkClass} to="https://algoleague.com">
           algoleague
         </Link>{" "}
         account.
-      </>
-    ),
-    p3: (
-      <>
+      </Fragment>,
+      <Fragment key="teams">
         Teams can have a maximum of 3 members, or individuals can compete
         independently.
-      </>
-    ),
-    p4: <>Team members CAN be from DIFFERENT universities.</>,
+      </Fragment>,
+      <Fragment key="universities">
+        Team members may be from different universities.
+      </Fragment>,
+    ],
   },
   cr: {
     title: "Competition Rules",
-    p1: (
-      <>
+    paragraphs: [
+      <Fragment key="collaboration">
         Team members are required to collaborate exclusively with their
         teammates while solving the questions. Seeking assistance from
         individuals outside the team is strictly prohibited.
-      </>
-    ),
-    p2: (
-      <>
+      </Fragment>,
+      <Fragment key="plagiarism">
         While participants have the option to consult external sources,
         including web pages, it is expressly forbidden to copy and use any code.
         Plagiarism will be detected, and any such instance will result in the
         disqualification of the team.
-      </>
-    ),
-    p3: (
-      <>
+      </Fragment>,
+      <Fragment key="computers">
         Each team member is permitted to use their own computer throughout the
         competition.
-      </>
-    ),
-    p4: (
-      <>
+      </Fragment>,
+      <Fragment key="languages">
         Solutions can be submitted in one of the following programming
         languages: C, C#, C++, Java, JavaScript, and Python.
-      </>
-    ),
+      </Fragment>,
+    ],
   },
   qualification: {
     title: "Qualification Criteria for the Final Round",
-    p1: (
-      <>
+    paragraphs: [
+      <Fragment key="attendance">
         Finalists will be required to attend the competition in person. In the
         event that a qualifying team cannot attend physically, the opportunity
         will be passed on to the next eligible team.
-      </>
-    ),
-    p2: (
-      <>
+      </Fragment>,
+      <Fragment key="verification">
         As part of the qualification process, Final Round participants' student
         documents will be subject to verification.
-      </>
-    ),
-    p3: (
-      <>
+      </Fragment>,
+      <Fragment key="selection">
         The selection of finalists will be based on their performance during the
         online qualification round on{" "}
         <Link className={linkClass} to="https://algoleague.com">
@@ -159,13 +139,13 @@ const content = {
           algoleague.
         </Link>{" "}
         Top-performing teams will advance to the final stage of the competition.
-      </>
-    ),
+      </Fragment>,
+    ],
   },
   practicing: {
     title: "Practicing for the Competition",
-    p1: (
-      <>
+    paragraphs: [
+      <Fragment key="practice">
         If you're looking to enhance your programming skills and prepare for the
         upcoming set, you can practice with problems of varying difficulty
         levels on{" "}
@@ -175,10 +155,8 @@ const content = {
         >
           algoleague
         </Link>
-      </>
-    ),
-    p2: (
-      <>
+      </Fragment>,
+      <Fragment key="resources">
         Additionally, we recommend two free and open-source resources to help
         you prepare:{" "}
         <Link
@@ -194,10 +172,8 @@ const content = {
           Competitive Programmers Handbook{" "}
         </Link>{" "}
         by Antti Laaksonen.
-      </>
-    ),
-    p3: (
-      <>
+      </Fragment>,
+      <Fragment key="problems">
         Or you can discover various problem sets from algoleague:{" "}
         <Link
           className={linkClass}
@@ -228,10 +204,9 @@ const content = {
           Graph
         </Link>
         .
-      </>
-    ),
+      </Fragment>,
+    ],
   },
-  contact: "Do you still have questions in your mind? Contact us at ",
 };
 
 const hClass = "font-display font-semibold text-4xl text-white mb-3";
@@ -249,68 +224,33 @@ export const Rules = () => {
         />
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-20">
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.general.title}</h2>
-              <p className={pClass}>{content.general.p1}</p>
-              <p className={pClass}>{content.general.p2}</p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.ocp.title}</h2>
-              <ul className="ml-4 flex list-disc flex-col gap-4">
-                <li className={pClass}>{content.ocp.p1}</li>
-                <li className={pClass}>{content.ocp.p2}</li>
-                <li className={pClass}>{content.ocp.p3}</li>
-                <li className={pClass}>{content.ocp.p4}</li>
-                <li className={pClass}>{content.ocp.p5}</li>
-                <li className={pClass}>{content.ocp.p6}</li>
-                <li className={pClass}>{content.ocp.p7}</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.pr.title}</h2>
-              <ul className="ml-4 flex list-disc flex-col gap-4">
-                <li className={pClass}>{content.pr.p1}</li>
-                <li className={pClass}>{content.pr.p2}</li>
-                <li className={pClass}>{content.pr.p3}</li>
-                <li className={pClass}>{content.pr.p4}</li>
-              </ul>
-            </div>
-            <img
-              src="/images/tribute.png"
-              alt="Team"
-              className="rounded-[12px] object-cover"
-              height={480}
-              width={480 * 1.5}
-            />
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.cr.title}</h2>
-              <ul className="ml-4 flex list-disc flex-col gap-4">
-                <li className={pClass}>{content.cr.p1}</li>
-                <li className={pClass}>{content.cr.p2}</li>
-                <li className={pClass}>{content.cr.p3}</li>
-                <li className={pClass}>{content.cr.p4}</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.qualification.title}</h2>
-              <ul className="ml-4 flex list-disc flex-col gap-4">
-                <li className={pClass}>{content.qualification.p1}</li>
-                <li className={pClass}>{content.qualification.p2}</li>
-                <li className={pClass}>{content.qualification.p3}</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h2 className={hClass}>{content.practicing.title}</h2>
-              <ul className="ml-4 flex list-disc flex-col gap-4">
-                <li className={pClass}>{content.practicing.p1}</li>
-                <li className={pClass}>{content.practicing.p2}</li>
-                <li className={pClass}>{content.practicing.p3}</li>
-              </ul>
-            </div>
+            {Object.entries(content).map(([key, section]) => (
+              <div key={key} className="flex flex-col gap-3">
+                <h2 className={hClass}>{section.title}</h2>
+                <ul className="ml-4 flex list-disc flex-col gap-4">
+                  {section.paragraphs.map((paragraph, index) => (
+                    <li key={`${key}-${index}`} className={pClass}>
+                      {paragraph}
+                    </li>
+                  ))}
+                </ul>
+                {key === "pr" && (
+                  <img
+                    src="/images/tribute.png"
+                    alt="Team"
+                    className="rounded-[12px] object-cover"
+                    height={480}
+                    width={480 * 1.5}
+                  />
+                )}
+              </div>
+            ))}
           </div>
           <hr className="my-6 h-[1px] w-full border-none bg-[rgb(255,255,255,0.04)]" />
           <p className="text-ocean-925/50 text-sm">
-            <span>{content.contact}</span>
+            <span>
+              Do you still have questions in your mind? Contact us at{" "}
+            </span>
             <a className={linkClass} href="mailto:contact@bucodecomp.com">
               contact@bucodecomp.com{" "}
             </a>

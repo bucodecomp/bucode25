@@ -80,7 +80,7 @@ export const CTA = () => {
                 size: "md",
               })}
             >
-              <span>Competition Rules</span>
+              <span>Learn More</span>
             </Link>
           </div>
         </div>
