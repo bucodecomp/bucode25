@@ -29,25 +29,25 @@ export const Teaser = () => {
       <div className="container mx-auto max-w-screen-2xl flex flex-col items-start gap-20 px-10 py-[120px]">
         <SectionHead
           label="Why BuCode?"
-          title="What To Expect..."
-          description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
+          title="Tried and True"
+          description="Hundreds have already tasted the thrill of BuCode. Become a part of the family and build friendships stronger than a linked list."
           align="start"
         />
         <div className="flex w-full flex-col items-center gap-10">
           <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-y-0">
             <TeaserCard
-              title="Thrilling Competition"
+              title="250+ Participants"
               description="As we get closer to the exciting moments, the countdown has started."
               icon={<RiRocketLine size={24} />}
             />
             <TeaserCard
-              title="Exciting Final Round"
+              title="24 Teams"
               description="As we get closer to the exciting moments, the countdown has started."
               icon={<RiRocketLine size={24} />}
             />
             <TeaserCard
-              title="Unforgettable Event"
-              description="As we get closer to the exciting moments, the countdown has started."
+              title="13 Universities"
+              description="A union of different cultures, all with the same passion."
               icon={<RiRocketLine size={24} />}
             />
           </div>

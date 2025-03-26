@@ -98,8 +98,8 @@ export const Hero = () => {
               Algorithm Competition
             </h1>
             <p className="max-w-xl text-balance py-4 text-base text-ocean-925/80 leading-8 md:py-5 md:text-lg">
-              Ready to battle through the greatest minds in the realm of
-              algorithms? Showcase your skills in BuCode 2025!
+              Welcome to the ultimate battleground for algorithmic warriors.
+              Grab a teammate or two and compete against the best minds.
             </p>
             <div className="flex items-center gap-4 py-3">
               <Link

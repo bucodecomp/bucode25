@@ -93,25 +93,25 @@ export const Features = () => {
         <SectionHead
           label="Why BuCode?"
           title="What To Expect..."
-          description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
+          description="This is your chance to showcase your excellence, but there is more to BuCode than just the competition."
           align="center"
         />
         <div className="relative grid w-full grid-cols-1 items-stretch border border-ocean-1000/2 md:grid-cols-3">
           <FeatureCard
-            title="Thrilling Competition"
-            description="As we get closer to the exciting moments, the countdown has started."
+            title="Pro Community"
+            description="A chance for best minds in the country to be in the same room at the same time."
             icon={<RiRocketLine />}
           />
           <FeatureCard
-            title="Rewarding Experience"
-            description="As we get closer to the exciting moments, the countdown has started."
+            title="Exceptional Ambiance"
+            description="12 hours of caffeine-fueled problem solving, with the best view in Istanbul."
             icon={<RiRocketLine />}
             stars
             isMiddle
           />
           <FeatureCard
-            title="Unforgettable Atmosphere"
-            description="As we get closer to the exciting moments, the countdown has started."
+            title="Big O Bigger Rewards"
+            description="Generous prize pool, because intelligence should come with perks."
             icon={<RiRocketLine />}
           />
           <FourStars />
