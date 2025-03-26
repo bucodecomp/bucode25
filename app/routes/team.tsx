@@ -53,7 +53,8 @@ const team: TeamMember[] = [
     name: "John Doe",
     subteam: subteams[0],
     bio: "John Doe is a software engineer at Google",
-    image: "/images/team/john-doe.jpg",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5603AQG7_il61S-hvg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1683663177233?e=1748476800&v=beta&t=9noaOBFCihxB7VvT25TesX_RX_E7uP6bPAn6t9bGYak",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -103,13 +104,13 @@ export default function Contact({ loaderData }: Route.ComponentProps) {
       {subteams.map((subteam) => {
         return (
           <section key={subteam.name} className="py-16">
-            <div className="container mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 md:px-10">
+            <div className="container mx-auto flex max-w-screen-xl flex-col gap-12 px-4 md:px-10">
               <SectionHead
                 title={subteam.description}
                 align="start"
                 label={subteam.name}
               />
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {team
                   .filter((e) => e.subteam === subteam)
                   .map((member) => {

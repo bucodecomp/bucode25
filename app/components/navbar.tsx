@@ -23,7 +23,7 @@ const navContainer = cva(
     variants: {
       scrolled: {
         false:
-          "w-full max-w-screen-2xl md:px-10 bg-ocean-25/4 backdrop-blur-[1px]",
+          "w-full max-w-screen-2xl md:px-10 bg-ocean-25/0 backdrop-blur-[1px]",
         true: "bg-ocean-25/96 ring-ocean-900/5 max-w-screen-sm backdrop-blur-[4px]",
       },
     },

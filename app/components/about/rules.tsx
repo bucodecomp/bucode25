@@ -9,13 +9,13 @@ const content = {
   general: {
     title: "General",
     paragraphs: [
-      <>
+      <Fragment key="intro">
         BuCode is an algorithm competition organized by Boğaziçi University
         Computer Engineering Students in collaboration with COMPEC. All
         university students eager to dive into the world of algorithms can
         participate and compete alongside the most ambitious minds in the field.
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="qualification">
         To advance to the Final Round, your team needs to successfully complete
         the 12-hour online Qualification Round. The top 15 teams will receive
         invitations to the final competition at Boğaziçi University South
@@ -25,7 +25,7 @@ const content = {
           algoleague
         </Link>{" "}
         and will adhere to ICPC rules.
-      </>,
+      </Fragment>,
     ],
   },
   ocp: {
@@ -214,7 +214,7 @@ const pClass = "font-sans text-lg leading-8 text-ocean-950/75";
 
 export const Rules = () => {
   return (
-    <div className="container mx-auto flex max-w-screen-2xl flex-col items-center px-12 py-40">
+    <div className="container mx-auto flex max-w-screen-2xl flex-col items-center px-12 py-48">
       <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-32">
         <SectionHead
           title="Knowledge Repository."
@@ -222,6 +222,8 @@ export const Rules = () => {
           align="center"
           label="ABOUT BUCODE"
         />
+        <div className="h-[1px] w-full bg-gradient-to-l from-ocean-900/0 via-ocean-900/20 to-ocean-900/0" />
+
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-20">
             {Object.entries(content).map(([key, section]) => (

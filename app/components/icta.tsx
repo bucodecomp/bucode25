@@ -7,9 +7,9 @@ export const ICTA = () => {
   return (
     <section className="py-40">
       <div className="container mx-auto max-w-screen-2xl px-4 md:px-10">
-        <div className="flex flex-col items-start gap-4 rounded-2xl bg-ocean-50 p-10 ring-2 ring-ocean-50 ring-offset-4 ring-offset-ocean-100 md:flex-row md:items-center">
-          <div className="flex-1 flex flex-col gap-2">
-            <h2 className="font-semibold text-[2.5rem] leading-[2.75rem]">
+        <div className="flex flex-col items-start gap-4 rounded-2xl bg-ocean-50 p-8 ring-2 ring-ocean-50 ring-offset-4 ring-offset-ocean-100 md:flex-row md:items-center">
+          <div className="flex flex-1 flex-col gap-2 pb-2">
+            <h2 className="pb-1 font-display font-semibold text-[2.5rem] leading-[2.75rem]">
               Got something to say?
             </h2>
             <span className="text-base text-ocean-950/75">

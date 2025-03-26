@@ -11,7 +11,7 @@ export const TeamHero = () => {
           label="ABOUT BUCODE"
         />
         <div className="flex w-full max-w-3xl flex-col gap-10 sm:gap-12 md:gap-20 ">
-          <div className="h-[1px] bg-gradient-to-l from-ocean-900/0 via-ocean-900/40 to-ocean-900/0" />
+          <div className="h-[1px] bg-gradient-to-l from-ocean-900/0 via-ocean-900/20 to-ocean-900/0" />
 
           <div
             className="relative w-full overflow-hidden rounded-xl ring ring-ocean-1000/10 ring-offset-2 ring-offset-ocean-100"
@@ -52,7 +52,7 @@ export const TeamHero = () => {
               </g>
             </svg> */}
           </div>
-          <div className="h-[1px] bg-gradient-to-l from-ocean-900/0 via-ocean-900/40 to-ocean-900/0" />
+          <div className="h-[1px] bg-gradient-to-l from-ocean-900/0 via-ocean-900/20 to-ocean-900/0" />
         </div>
       </div>
     </section>
