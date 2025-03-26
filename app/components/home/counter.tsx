@@ -1,40 +1,18 @@
 import { RiArrowRightLine } from "@remixicon/react";
 import { cva } from "cva";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router";
+import { cn } from "~/lib/utils";
 import { Vibration, primaryButton } from "../button";
 import { SectionHead } from "../section-head";
 import { SlidingNumber } from "../ui/sliding-number";
 
-const qualificationClass = cva("", {
+const tabTextClass = cva("transition-all", {
   variants: {
     active: {
-      true: "bg-[#9FD5FA]/12 bg-[linear-gradient(to_right,_rgb(255,255,255,0.08),_rgb(255,255,255,0.0))] text-white",
-      false: "bg-transparent text-[#608197]",
-    },
-  },
-  defaultVariants: {
-    active: true,
-  },
-});
-
-const finalClass = cva("", {
-  variants: {
-    active: {
-      true: "bg-[#9FD5FA]/12 bg-[linear-gradient(to_left,_rgb(255,255,255,0.08),_rgb(255,255,255,0.0))] text-white",
-      false: "bg-transparent text-[#608197]",
-    },
-  },
-  defaultVariants: {
-    active: false,
-  },
-});
-
-const rectangleClass = cva("h-full w-[2px]", {
-  variants: {
-    active: {
-      true: "bg-[#0B1B26]",
-      false: "bg-[#1D323F]",
+      true: "bg-white/6 text-white",
+      false:
+        "bg-transparent text-ocean-975/50 hover:bg-white/2 active:bg-white/6 hover:text-ocean-975/60",
     },
   },
   defaultVariants: {
@@ -46,36 +24,32 @@ const CounterDigit = ({
   digit,
   timeUnit,
 }: { digit: number; timeUnit: string }) => {
-  if (digit === 1) {
-    timeUnit = timeUnit.slice(0, -1);
-  }
-
+  const unit = digit === 1 ? timeUnit.slice(0, -1) : timeUnit;
   return (
     <div className="flex w-[120px] flex-col items-center">
       <div className="font-sans font-semibold text-[#C9E9FF] text-[64px] leading-18 tracking-[-0.01em]">
         <SlidingNumber value={digit} padStart={true} />
       </div>
       <div className="font-medium font-sans text-[#7494AF] text-base leading-6">
-        {timeUnit}
+        {unit}
       </div>
     </div>
   );
 };
 
-const DigitSeperator = ({ visible }: { visible: boolean }) => {
-  return (
-    <div
-      className={`flex h-full w-[80px] flex-col items-center justify-center${visible ? "" : " hidden md:flex"}`}
-    >
-      <div className="h-12 w-[1px] bg-[radial-gradient(circle_at_center,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-    </div>
-  );
-};
+const DigitSeparator = ({ visible }: { visible: boolean }) => (
+  <div
+    className={cn("flex h-full w-[80px] flex-col items-center justify-center", {
+      "hidden md:flex": !visible,
+    })}
+  >
+    <div className="h-12 w-[1px] bg-[radial-gradient(circle_at_center,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
+  </div>
+);
 
 const getRemainingTime = (targetOrg: Date) => {
   const now = new Date();
   const target = new Date(targetOrg);
-  // target.setHours(target.getHours() - 3);
   const diff = target.getTime() - now.getTime();
   const remDays = Math.floor(diff / (1000 * 60 * 60 * 24));
   const remHours = Math.floor(
@@ -86,69 +60,66 @@ const getRemainingTime = (targetOrg: Date) => {
   return { remDays, remHours, remMinutes, remSeconds };
 };
 
-const DateWithCoolLines = ({ date }: { date: string }) => {
-  return (
-    <div className="flex w-full items-center gap-3">
-      <div className="h-[1px] flex-1 bg-[linear-gradient(to_left,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-      <h1 className="pb-1 font-bold font-display text-[#446377] text-sm uppercase leading-5 tracking-4xl">
-        {date}
-      </h1>
-      <div className="h-[1px] flex-1 bg-[linear-gradient(to_right,_rgb(99,140,164,0.64),_rgb(99,140,164,0.0))]" />
-    </div>
-  );
+const LineText = ({ text }: { text: string }) => (
+  <div className="flex w-full items-center gap-3">
+    <div className="h-[1px] flex-1 bg-gradient-to-l from-ocean-900/40 to-ocean-900/0" />
+    <h1 className="pb-1 font-bold font-display text-ocean-900/40 text-sm uppercase leading-5 tracking-4xl">
+      {text}
+    </h1>
+    <div className="h-[1px] flex-1 bg-gradient-to-r from-ocean-900/40 to-ocean-900/0" />
+  </div>
+);
+
+const formatDate = (date: Date) => {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+  return formatter.format(date);
+};
+
+const formatTime = (date: Date) => {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "UTC",
+  });
+  return formatter.format(date);
 };
 
 const DateCounter = ({ date }: { date: Date }) => {
-  const month = date.toLocaleString("en-US", {
-    month: "long",
-    timeZone: "UTC",
-  });
-  const day = date.getDate();
-  const year = date.getFullYear();
-  const [hour, amPm] = date
-    .toLocaleString("en-US", {
-      hour: "numeric",
-      hour12: true,
-      timeZone: "UTC",
-    })
-    .split(" ");
-  const minute = date.getMinutes();
+  const [time, setTime] = useState(getRemainingTime(date));
 
-  const { remDays, remHours, remMinutes, remSeconds } = getRemainingTime(date);
-
-  const [days, setDays] = useState<number>(remDays);
-  const [hours, setHours] = useState<number>(remHours);
-  const [minutes, setMinutes] = useState<number>(remMinutes);
-  const [seconds, setSeconds] = useState<number>(remSeconds);
+  const updateCountdown = useCallback(() => {
+    setTime(getRemainingTime(date));
+  }, [date]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const { remDays, remHours, remMinutes, remSeconds } =
-        getRemainingTime(date);
-      setDays(remDays);
-      setHours(remHours);
-      setMinutes(remMinutes);
-      setSeconds(remSeconds);
-    }, 1000);
-
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [date]);
+  }, [updateCountdown]);
+
+  const { remDays, remHours, remMinutes, remSeconds } = time;
+  const dateText = formatDate(date);
+  const timeText = formatTime(date);
 
   return (
     <div className="flex w-full flex-col gap-6">
-      <DateWithCoolLines date={`${month} ${day}, ${year}`} />
+      <LineText text={dateText} />
       <div className="grid grid-cols-3 place-items-center gap-y-12 md:grid-cols-7 md:gap-y-0">
-        <CounterDigit digit={days} timeUnit="days" />
-        <DigitSeperator visible={true} />
-        <CounterDigit digit={hours} timeUnit="hours" />
-        <DigitSeperator visible={false} />
-        <CounterDigit digit={minutes} timeUnit="minutes" />
-        <DigitSeperator visible={true} />
-        <CounterDigit digit={seconds} timeUnit="seconds" />
+        <CounterDigit digit={remDays} timeUnit="days" />
+        <DigitSeparator visible={true} />
+        <CounterDigit digit={remHours} timeUnit="hours" />
+        <DigitSeparator visible={false} />
+        <CounterDigit digit={remMinutes} timeUnit="minutes" />
+        <DigitSeparator visible={true} />
+        <CounterDigit digit={remSeconds} timeUnit="seconds" />
       </div>
-      <DateWithCoolLines
-        date={`${hour.padStart(2, "0")}:${minute.toString().padStart(2, "0")} ${amPm}`}
-      />
+      <LineText text={timeText} />
     </div>
   );
 };
@@ -156,9 +127,13 @@ const DateCounter = ({ date }: { date: Date }) => {
 export const Counter = () => {
   const [activeTab, setActiveTab] = useState<string>("qualification");
 
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="w-dvg p-4">
-      <div className="h-full rounded-4xl border border-[#416279]/24 bg-[#081016] px-10 py-30">
+    <div className="w-dvw p-4">
+      <div className="h-full rounded-4xl bg-ocean-50 px-10 py-30">
         <div className="flex h-full flex-col items-center gap-12">
           <SectionHead
             title="Lift Up Your Head."
@@ -168,34 +143,25 @@ export const Counter = () => {
           />
           <div className="flex flex-col items-center gap-10">
             <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
-              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-              <div
-                className={`flex w-[144px] cursor-pointer items-center justify-center ${qualificationClass({ active: activeTab === "qualification" })} px-6 py-1 font-medium font-sans text-base leading-8`}
-                onClick={() => setActiveTab("qualification")}
-              >
-                Qualification
-              </div>
-              <div className="flex h-full">
-                <div
-                  className={`${rectangleClass({ active: activeTab === "qualification" })}`}
-                />
-                <div
-                  className={`${rectangleClass({ active: activeTab !== "qualification" })}`}
-                />
-                <div
-                  className={`${rectangleClass({ active: activeTab === "qualification" })}`}
-                />
-                <div
-                  className={`${rectangleClass({ active: activeTab !== "qualification" })}`}
-                />
-              </div>
-              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-              <div
-                className={`flex w-[144px] cursor-pointer items-center justify-center ${finalClass({ active: activeTab === "final" })} px-6 py-1 font-medium font-sans text-base leading-8`}
-                onClick={() => setActiveTab("final")}
-              >
-                Finals
-              </div>
+              {["qualification", "final"].map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  className={cn(
+                    tabTextClass({ active: activeTab === tab }),
+                    "flex w-[144px] cursor-pointer items-center justify-center px-6 py-1 font-medium font-sans text-base leading-8",
+                  )}
+                  onClick={() => handleTabChange(tab)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handleTabChange(tab);
+                    }
+                  }}
+                  tabIndex={0}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
             </div>
             {activeTab === "qualification" ? (
               <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
@@ -206,10 +172,10 @@ export const Counter = () => {
           <div className="flex items-center gap-1.5">
             <Vibration position="left" />
             <Link
-              to="/about"
-              className={`${primaryButton({ size: "md" })} w-fit`}
+              to="/apply"
+              className={cn(primaryButton({ size: "md" }), "w-fit")}
             >
-              <span>BuCode 2024 Recap</span>
+              <span>Apply Now</span>
               <RiArrowRightLine className="-mr-1 h-4 w-4" />
             </Link>
             <Vibration position="right" />

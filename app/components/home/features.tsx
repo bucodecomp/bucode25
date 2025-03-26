@@ -79,7 +79,7 @@ const FeatureCard = ({
         <h1 className="font-display font-semibold text-2xl leading-8 tracking-[-0.01em]">
           {title}
         </h1>
-        <p className="text-ocean-925/50 leading-8">{description}</p>
+        <p className="text-ocean-950/75 leading-8">{description}</p>
       </div>
       {stars && <FourStars />}
     </div>

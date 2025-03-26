@@ -47,7 +47,7 @@ export const SectionHead = ({
         {title}
       </h2>
       {description && (
-        <p className="py-2 pt-4 font-sans text-lg text-ocean-925/50 leading-8">
+        <p className="py-2 pt-4 font-sans text-lg text-ocean-950/75 leading-8">
           {description}
         </p>
       )}

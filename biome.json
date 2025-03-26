@@ -12,6 +12,9 @@
       },
       "nursery": {
         "useSortedClasses": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       }
     }
   },

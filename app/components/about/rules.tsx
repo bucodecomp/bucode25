@@ -9,16 +9,15 @@ const content = {
     title: "General",
     p1: (
       <>
-        "BuCode is an algorithm competition organized by Boğaziçi University
+        BuCode is an algorithm competition organized by Boğaziçi University
         Computer Engineering Students in collaboration with COMPEC. All
         university students eager to dive into the world of algorithms can
-        participate and compete alongside the most ambitious minds in the
-        field.",
+        participate and compete alongside the most ambitious minds in the field.
       </>
     ),
     p2: (
       <>
-        "To advance to the Final Round, your team needs to successfully complete
+        To advance to the Final Round, your team needs to successfully complete
         the 12-hour online Qualification Round. The top 15 teams will receive
         invitations to the final competition at Boğaziçi University South
         Campus, with the competition lasting for a total of 16 hours. Both
@@ -26,7 +25,7 @@ const content = {
         <Link className={linkClass} to="https://algoleague.com">
           algoleague
         </Link>{" "}
-        and will adhere to ICPC rules.",
+        and will adhere to ICPC rules.
       </>
     ),
   },
@@ -34,51 +33,50 @@ const content = {
     title: "Official Competition Path",
     p1: (
       <>
-        "The online qualification round is on February 17th at{" "}
+        The online qualification round is on February 17th at{" "}
         <Link
           className={linkClass}
           to="https://algoleague.com/contest/bucode-bogazici-algorithm-competition-2024-qualification-round/description"
         >
           algoleague.
         </Link>{" "}
-        Your team has 12 hours (12:00 pm to 12:00 am) to solve 10-12
-        questions.",
+        Your team has 12 hours (12:00 pm to 12:00 am) to solve 10-12 questions.
       </>
     ),
     p2: (
       <>
-        "You will have the opportunity to seek clarifications from our technical
-        team.",
+        You will have the opportunity to seek clarifications from our technical
+        team.
       </>
     ),
     p3: (
       <>
-        "Based on the qualification results, the first 15 teams which has the
-        qualification criteria will qualify to participate in the final round.",
+        Based on the qualification results, the first 15 teams which has the
+        qualification criteria will qualify to participate in the final round.
       </>
     ),
-    p4: <>"Results will be announced on February 20th.",</>,
+    p4: <>Results will be announced on February 20th.</>,
     p5: (
       <>
-        "The final round is scheduled to take place at Boğaziçi University South
+        The final round is scheduled to take place at Boğaziçi University South
         Campus on March 2.{" "}
         <Link className={linkClass} to="https://algoleague.com">
           algoleague
         </Link>{" "}
-        platform will once again be used during the competition.",
+        platform will once again be used during the competition.
       </>
     ),
     p6: (
       <>
-        "In the final, your team will strive to solve 10-12 questions within a
+        In the final, your team will strive to solve 10-12 questions within a
         16-hour period. It will start at 6:00 pm on March 2 and conclude at
-        10:00 am on March 3.",
+        10:00 am on March 3.
       </>
     ),
     p7: (
       <>
-        "The top five teams will be honored with awards during the ceremony
-        following the competition.",
+        The top five teams will be honored with awards during the ceremony
+        following the competition.
       </>
     ),
   },
@@ -86,54 +84,54 @@ const content = {
     title: "Participation Rules",
     p1: (
       <>
-        "Contestants must be currently enrolled in a bachelor’s or associate’s
-        degree program in Turkey.",
+        Contestants must be currently enrolled in a bachelor's or associate's
+        degree program in Turkey.
       </>
     ),
     p2: (
       <>
-        "All participants are required to have an{" "}
+        All participants are required to have an{" "}
         <Link className={linkClass} to="https://algoleague.com">
           algoleague
         </Link>{" "}
-        account.",
+        account.
       </>
     ),
     p3: (
       <>
-        "Teams can have a maximum of 3 members, or individuals can compete
-        independently.",
+        Teams can have a maximum of 3 members, or individuals can compete
+        independently.
       </>
     ),
-    p4: <>"Team members CAN be from DIFFERENT universities.",</>,
+    p4: <>Team members CAN be from DIFFERENT universities.</>,
   },
   cr: {
     title: "Competition Rules",
     p1: (
       <>
-        "Team members are required to collaborate exclusively with their
+        Team members are required to collaborate exclusively with their
         teammates while solving the questions. Seeking assistance from
-        individuals outside the team is strictly prohibited.",
+        individuals outside the team is strictly prohibited.
       </>
     ),
     p2: (
       <>
-        "While participants have the option to consult external sources,
+        While participants have the option to consult external sources,
         including web pages, it is expressly forbidden to copy and use any code.
         Plagiarism will be detected, and any such instance will result in the
-        disqualification of the team.",
+        disqualification of the team.
       </>
     ),
     p3: (
       <>
-        "Each team member is permitted to use their own computer throughout the
-        competition.",
+        Each team member is permitted to use their own computer throughout the
+        competition.
       </>
     ),
     p4: (
       <>
-        "Solutions can be submitted in one of the following programming
-        languages: C, C#, C++, Java, JavaScript, and Python.",
+        Solutions can be submitted in one of the following programming
+        languages: C, C#, C++, Java, JavaScript, and Python.
       </>
     ),
   },
@@ -141,27 +139,26 @@ const content = {
     title: "Qualification Criteria for the Final Round",
     p1: (
       <>
-        "Finalists will be required to attend the competition in person. In the
+        Finalists will be required to attend the competition in person. In the
         event that a qualifying team cannot attend physically, the opportunity
-        will be passed on to the next eligible team.",
+        will be passed on to the next eligible team.
       </>
     ),
     p2: (
       <>
-        "As part of the qualification process, Final Round participants' student
-        documents will be subject to verification.",
+        As part of the qualification process, Final Round participants' student
+        documents will be subject to verification.
       </>
     ),
     p3: (
       <>
-        "The selection of finalists will be based on their performance during
-        the online qualification round on{" "}
+        The selection of finalists will be based on their performance during the
+        online qualification round on{" "}
         <Link className={linkClass} to="https://algoleague.com">
           {" "}
           algoleague.
         </Link>{" "}
-        Top-performing teams will advance to the final stage of the
-        competition.",
+        Top-performing teams will advance to the final stage of the competition.
       </>
     ),
   },
@@ -169,8 +166,8 @@ const content = {
     title: "Practicing for the Competition",
     p1: (
       <>
-        "If you're looking to enhance your programming skills and prepare for
-        the upcoming set, you can practice with problems of varying difficulty
+        If you're looking to enhance your programming skills and prepare for the
+        upcoming set, you can practice with problems of varying difficulty
         levels on{" "}
         <Link
           className={linkClass}
@@ -178,12 +175,11 @@ const content = {
         >
           algoleague
         </Link>
-        ",
       </>
     ),
     p2: (
       <>
-        "Additionally, we recommend two free and open-source resources to help
+        Additionally, we recommend two free and open-source resources to help
         you prepare:{" "}
         <Link
           className={linkClass}
@@ -197,12 +193,12 @@ const content = {
           {" "}
           Competitive Programmers Handbook{" "}
         </Link>{" "}
-        by Antti Laaksonen.",
+        by Antti Laaksonen.
       </>
     ),
     p3: (
       <>
-        "Or you can discover various problem sets from algoleague:{" "}
+        Or you can discover various problem sets from algoleague:{" "}
         <Link
           className={linkClass}
           to="https://www.algoleague.com/contest/algorithm-training-beginner-set/"
@@ -231,7 +227,7 @@ const content = {
         >
           Graph
         </Link>
-        .",
+        .
       </>
     ),
   },
@@ -239,7 +235,7 @@ const content = {
 };
 
 const hClass = "font-display font-medium text-4xl text-white";
-const pClass = "font-sans text-lg leading-8 text-ocean-925/75";
+const pClass = "font-sans text-lg leading-8 text-ocean-950/75";
 
 export const Rules = () => {
   return (

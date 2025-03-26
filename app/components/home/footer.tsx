@@ -6,23 +6,23 @@ const columns = [
     links: [
       {
         text: "About",
-        href: "#",
+        href: "/about",
       },
       {
         text: "FAQ",
-        href: "#",
+        href: "/faq",
       },
       {
         text: "Prizes",
-        href: "#",
+        href: "/prizes",
       },
       {
         text: "Sponsors",
-        href: "#",
+        href: "/sponsors",
       },
       {
         text: "BuCode 2024",
-        href: "#",
+        href: "/old/2024",
       },
     ],
   },
@@ -44,11 +44,11 @@ const columns = [
     links: [
       {
         text: "About Us",
-        href: "#",
+        href: "/about",
       },
       {
         text: "Apply BuCode",
-        href: "#",
+        href: "/apply",
       },
     ],
   },
@@ -82,7 +82,7 @@ const FooterColumn = ({
 
 export const Footer = () => {
   return (
-    <div className="w-full px-6 py-20">
+    <div className="container max-w-screen px-6 py-20">
       <div className="border-white/4 border-y-[1px] px-0 py-10 sm:px-8 md:px-24">
         <div className="grid grid-cols-1 gap-8 gap-y-16 px-4 py-6 sm:grid-cols-2 md:grid-cols-4">
           <Link to="/" className="flex justify-start">
