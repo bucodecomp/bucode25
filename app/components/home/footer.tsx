@@ -82,7 +82,7 @@ const FooterColumn = ({
 
 export const Footer = () => {
   return (
-    <div className="container max-w-screen px-6 py-20">
+    <div className="container mx-auto max-w-screen-3xl px-6 py-20">
       <div className="border-white/4 border-y-[1px] px-0 py-10 sm:px-8 md:px-24">
         <div className="grid grid-cols-1 gap-8 gap-y-16 px-4 py-6 sm:grid-cols-2 md:grid-cols-4">
           <Link to="/" className="flex justify-start">

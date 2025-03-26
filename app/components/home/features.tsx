@@ -117,7 +117,6 @@ export const Features = () => {
           <FourStars />
         </div>
         <div className="flex items-center gap-1.5">
-          <Vibration position="left" />
           <Link
             to="/about"
             className={`${primaryButton({ size: "md" })} w-fit`}
@@ -125,7 +124,6 @@ export const Features = () => {
             <span>Competition Rules</span>
             <RiArrowRightLine className="-mr-1 h-4 w-4" />
           </Link>
-          <Vibration position="right" />
         </div>
       </div>
     </section>

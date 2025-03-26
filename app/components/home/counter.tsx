@@ -132,56 +132,58 @@ export const Counter = () => {
   };
 
   return (
-    <div className="w-dvw p-4">
-      <div className="h-full rounded-4xl bg-ocean-50 px-10 py-30">
-        <div className="flex h-full flex-col items-center gap-12">
-          <SectionHead
-            title="Lift Up Your Head."
-            label="Goodbye Friend"
-            description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
-            align="center"
-          />
-          <div className="flex flex-col items-center gap-10">
-            <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
-              {["qualification", "final"].map((tab) => (
-                <button
-                  key={tab}
-                  type="button"
-                  className={cn(
-                    tabTextClass({ active: activeTab === tab }),
-                    "flex w-[144px] cursor-pointer items-center justify-center px-6 py-1 font-medium font-sans text-base leading-8",
-                  )}
-                  onClick={() => handleTabChange(tab)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      handleTabChange(tab);
-                    }
-                  }}
-                  tabIndex={0}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
+    <section className="py-32">
+      <div className="container mx-auto max-w-screen-4xl p-4">
+        <div className="h-full rounded-4xl bg-ocean-50 px-10 py-30">
+          <div className="flex h-full flex-col items-center gap-12">
+            <SectionHead
+              title="Lift Up Your Head."
+              label="Goodbye Friend"
+              description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
+              align="center"
+            />
+            <div className="flex flex-col items-center gap-10">
+              <div className="flex h-10 w-fit overflow-hidden rounded-[8px] border border-[#446477]/40">
+                {["qualification", "final"].map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    className={cn(
+                      tabTextClass({ active: activeTab === tab }),
+                      "flex w-[144px] cursor-pointer items-center justify-center px-6 py-1 font-medium font-sans text-base leading-8",
+                    )}
+                    onClick={() => handleTabChange(tab)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        handleTabChange(tab);
+                      }
+                    }}
+                    tabIndex={0}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </button>
+                ))}
+              </div>
+              {activeTab === "qualification" ? (
+                <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
+              ) : (
+                <DateCounter date={new Date("2025-04-23T14:15:00Z")} />
+              )}
             </div>
-            {activeTab === "qualification" ? (
-              <DateCounter date={new Date("2025-04-20T12:00:00Z")} />
-            ) : (
-              <DateCounter date={new Date("2025-04-23T14:15:00Z")} />
-            )}
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Vibration position="left" />
-            <Link
-              to="/apply"
-              className={cn(primaryButton({ size: "md" }), "w-fit")}
-            >
-              <span>Apply Now</span>
-              <RiArrowRightLine className="-mr-1 h-4 w-4" />
-            </Link>
-            <Vibration position="right" />
+            <div className="flex items-center gap-1.5">
+              <Vibration position="left" />
+              <Link
+                to="/apply"
+                className={cn(primaryButton({ size: "md" }), "w-fit")}
+              >
+                <span>Register BuCode 25</span>
+                <RiArrowRightLine className="-mr-1 h-4 w-4" />
+              </Link>
+              <Vibration position="right" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

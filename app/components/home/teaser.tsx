@@ -26,7 +26,7 @@ const TeaserCard = ({
 export const Teaser = () => {
   return (
     <section>
-      <div className="container mx-auto flex flex-col items-start gap-20 px-10 py-[120px]">
+      <div className="container mx-auto max-w-screen-2xl flex flex-col items-start gap-20 px-10 py-[120px]">
         <SectionHead
           label="Why BuCode?"
           title="What To Expect..."
@@ -52,7 +52,6 @@ export const Teaser = () => {
             />
           </div>
           <div className="flex items-center gap-1.5">
-            <Vibration position="left" />
             <Link
               to="/about"
               className={`${primaryButton({ size: "md" })} w-fit`}
@@ -60,7 +59,6 @@ export const Teaser = () => {
               <span>BuCode 2024 Recap</span>
               <RiArrowRightLine className="-mr-1 h-4 w-4" />
             </Link>
-            <Vibration position="right" />
           </div>
         </div>
       </div>

@@ -17,7 +17,6 @@ export default function Contact({ loaderData }: Route.ComponentProps) {
   return (
     <main className="flex min-h-dvh flex-col items-stretch justify-center">
       <Navbar />
-      <Hero />
     </main>
   );
 }

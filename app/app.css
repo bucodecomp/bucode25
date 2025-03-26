@@ -170,6 +170,10 @@
   --tracking-5xl: 0.16em;
 }
 
+@theme {
+  --breakpoint-4xl: 90rem;
+}
+
 html,
 body {
   @media (prefers-color-scheme: dark) {

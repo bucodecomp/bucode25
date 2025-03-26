@@ -6,7 +6,7 @@ import { SectionHead } from "../section-head";
 export const Tribute = () => {
   return (
     <section>
-      <div className="container mx-auto flex flex-col gap-16 px-10 py-30">
+      <div className="container mx-auto flex max-w-screen-2xl flex-col gap-16 px-10 py-30">
         <SectionHead
           label="Past Stories"
           title="The Colors Will Change"

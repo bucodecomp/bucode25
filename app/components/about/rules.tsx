@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { SectionHead } from "../section-head";
 
-const linkClass =
+export const linkClass =
   "text-ocean-925 hover:text-white transition-colors duration-300";
 
 const content = {
@@ -234,12 +234,12 @@ const content = {
   contact: "Do you still have questions in your mind? Contact us at ",
 };
 
-const hClass = "font-display font-medium text-4xl text-white";
+const hClass = "font-display font-semibold text-4xl text-white mb-3";
 const pClass = "font-sans text-lg leading-8 text-ocean-950/75";
 
 export const Rules = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center px-12 py-40">
+    <div className="container mx-auto flex max-w-screen-2xl flex-col items-center px-12 py-40">
       <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-32">
         <SectionHead
           title="Knowledge Repository."
@@ -311,7 +311,7 @@ export const Rules = () => {
           <hr className="my-6 h-[1px] w-full border-none bg-[rgb(255,255,255,0.04)]" />
           <p className="text-ocean-925/50 text-sm">
             <span>{content.contact}</span>
-            <a className="underline" href="mailto:contact@bucodecomp.com">
+            <a className={linkClass} href="mailto:contact@bucodecomp.com">
               contact@bucodecomp.com{" "}
             </a>
           </p>
