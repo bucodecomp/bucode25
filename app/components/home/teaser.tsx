@@ -37,17 +37,17 @@ export const Teaser = () => {
           <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-y-0">
             <TeaserCard
               title="250+ Participants"
-              description="As we get closer to the exciting moments, the countdown has started."
+              description="A union of people who stay awake until 4 AM debugging - just like you."
               icon={<RiRocketLine size={24} />}
             />
             <TeaserCard
-              title="24 Teams"
-              description="As we get closer to the exciting moments, the countdown has started."
+              title="122 Teams"
+              description="A unique chance to find the co-founder of your next startup here."
               icon={<RiRocketLine size={24} />}
             />
             <TeaserCard
-              title="13 Universities"
-              description="A union of different cultures, all with the same passion."
+              title="17 Universities"
+              description="A melting pot for diverse academic cultures to connect and collaborate."
               icon={<RiRocketLine size={24} />}
             />
           </div>

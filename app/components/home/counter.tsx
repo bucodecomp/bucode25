@@ -134,7 +134,7 @@ export const Counter = () => {
           <div className="flex h-full flex-col items-center gap-12">
             <SectionHead
               title="Lift Up Your Head."
-              label="Goodbye Friend"
+              label="Excitement Grows"
               description="As we get closer to the exciting moments, the countdown has started for the Qualification and Final Rounds. The big day is coming soon, don't miss it!"
               align="center"
             />
