@@ -1,4 +1,10 @@
-import { RiArrowRightLine, RiRocketLine } from "@remixicon/react";
+import {
+  RiArrowRightLine,
+  RiBrain2Line,
+  RiCupLine,
+  RiGiftLine,
+  RiRocketLine,
+} from "@remixicon/react";
 import clsx from "clsx";
 import { cva } from "cva";
 import { Link } from "react-router";
@@ -100,19 +106,19 @@ export const Features = () => {
           <FeatureCard
             title="Pro Community"
             description="A chance for best minds in the country to be in the same room at the same time."
-            icon={<RiRocketLine />}
+            icon={<RiBrain2Line />}
           />
           <FeatureCard
             title="Exceptional Ambiance"
             description="12 hours of caffeine-fueled problem solving, with the best view in Istanbul."
-            icon={<RiRocketLine />}
+            icon={<RiCupLine />}
             stars
             isMiddle
           />
           <FeatureCard
             title="Big O Bigger Rewards"
             description="Generous prize pool, because intelligence should come with perks."
-            icon={<RiRocketLine />}
+            icon={<RiGiftLine />}
           />
           <FourStars />
         </div>
