@@ -1,4 +1,9 @@
-import { RiArrowRightLine, RiRocketLine } from "@remixicon/react";
+import {
+  RiArrowRightLine,
+  RiEmotionLine,
+  RiSchoolLine,
+  RiTeamLine,
+} from "@remixicon/react";
 import { Link } from "react-router";
 import { Vibration, primaryButton, secondaryButton } from "../button";
 import { SectionHead } from "../section-head";
@@ -38,17 +43,17 @@ export const Teaser = () => {
             <TeaserCard
               title="250+ Participants"
               description="A union of people who stay awake until 4 AM debugging - just like you."
-              icon={<RiRocketLine size={24} />}
+              icon={<RiEmotionLine size={24} />}
             />
             <TeaserCard
               title="122 Teams"
               description="A unique chance to find the co-founder of your next startup here."
-              icon={<RiRocketLine size={24} />}
+              icon={<RiTeamLine size={24} />}
             />
             <TeaserCard
               title="17 Universities"
               description="A melting pot for diverse academic cultures to connect and collaborate."
-              icon={<RiRocketLine size={24} />}
+              icon={<RiSchoolLine size={24} />}
             />
           </div>
           <div className="flex items-center gap-1.5">
