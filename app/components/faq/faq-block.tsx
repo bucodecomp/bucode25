@@ -32,7 +32,7 @@ export const FAQBlock = ({ questions }: FAQBlockProps) => {
                 />
               </svg>
             </A.Header>
-            <A.Content className="AccordionContent text-[#8F97B0]">
+            <A.Content className="AccordionContent text-ocean-950/70">
               <span className="pt-3 text-sm">{item.answer}</span>
             </A.Content>
           </A.Trigger>

@@ -184,7 +184,7 @@ export const Counter = () => {
             <div className="flex items-center gap-1.5">
               <Vibration position="left" />
               <Link
-                to="/apply"
+                to="/register"
                 className={cn(primaryButton({ size: "md" }), "w-fit")}
               >
                 <span>Register BuCode 25</span>

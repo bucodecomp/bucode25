@@ -48,7 +48,7 @@ const columns = [
       },
       {
         text: "Apply BuCode",
-        href: "/apply",
+        href: "/register",
       },
     ],
   },
