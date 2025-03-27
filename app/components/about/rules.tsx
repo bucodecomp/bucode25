@@ -215,7 +215,7 @@ const pClass = "font-sans text-lg leading-8 text-ocean-950/75";
 export const Rules = () => {
   return (
     <div className="container mx-auto flex max-w-screen-2xl flex-col items-center px-12 py-48">
-      <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-32">
+      <div className="flex w-full max-w-3xl flex-col items-center gap-20 md:gap-20">
         <SectionHead
           title="Knowledge Repository."
           description="Explore the essential information about the BuCode competition."
@@ -240,23 +240,21 @@ export const Rules = () => {
                   <img
                     src="/images/tribute.png"
                     alt="Team"
-                    className="rounded-[12px] object-cover"
-                    height={480}
-                    width={480 * 1.5}
+                    className="w-full rounded-[12px] object-cover"
                   />
                 )}
               </div>
             ))}
           </div>
           <hr className="my-6 h-[1px] w-full border-none bg-[rgb(255,255,255,0.04)]" />
-          <p className="text-ocean-925/50 text-sm">
+          <div className="text-ocean-925/50 text-sm">
             <span>
               Do you still have questions in your mind? Contact us at{" "}
             </span>
             <a className={linkClass} href="mailto:contact@bucodecomp.com">
               contact@bucodecomp.com{" "}
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </div>

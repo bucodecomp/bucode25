@@ -79,8 +79,8 @@ export const Hero = () => {
     <div className="flex h-[max(100dvh,60rem)] max-h-[1120px] w-dvw flex-col items-stretch p-3">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl p-4 pt-24">
         <HeroBackground />
-        <div className="container mx-auto max-w-screen-2xl px-4 md:px-10">
-          <div className="flex h-full w-full flex-col justify-center gap-0 py-10 pb-20 md:py-20 md:pb-40">
+        <div className="container mx-auto grid max-w-screen-2xl items-center px-4 md:grid-cols-5 md:px-10">
+          <div className="flex h-full w-full flex-col justify-center gap-0 py-10 pb-20 md:col-span-3 md:py-20 md:pb-40">
             <div className="flex items-center gap-3">
               <span className="font-medium text-base text-gold-700 uppercase tracking-5xl">
                 BuCode 2025
@@ -135,6 +135,13 @@ export const Hero = () => {
                 , Boğaziçi IT Club.
               </p>
             </div>
+          </div>
+          <div className="h-full md:col-span-2">
+            <img
+              src="/images/3d-logo.png"
+              className="h-full w-auto object-cover mix-blend-color-dodge"
+              alt="BuCode 2025"
+            />
           </div>
         </div>
       </div>

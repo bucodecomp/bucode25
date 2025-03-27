@@ -36,7 +36,8 @@ const navContainer = cva(
 const navigationLinks = [
   { name: "About", to: "/about" },
   { name: "Team", to: "/team" },
-  { name: "Contact", to: "/contact" },
+  // { name: "Contact", to: "/contact" },
+  { name: "FAQ", to: "/faq" },
 ] as const;
 
 export function Navbar() {
