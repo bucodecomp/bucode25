@@ -24,9 +24,9 @@ export const Tribute = () => {
               <h1 className="font-bold font-display text-[#C9E9FF] text-[40px] leading-12 tracking-[-0.01em]">
                 A dream came true.
               </h1>
-              <p className="max-w-[400px] font-sans text-[#7494AF] text-base leading-8">
+              <p className="max-w-[420px] font-sans text-[#7494AF] text-base leading-8">
                 Take a look at the moments from last year that makes us proud
-                and memories we cherish to this day.
+                and memories that we cherish to this day.
               </p>
             </div>
             <div>
