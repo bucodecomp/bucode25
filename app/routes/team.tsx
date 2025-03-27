@@ -25,12 +25,12 @@ export const subteams = [
   {
     label: "Lead",
     name: "Leadership",
-    description: "Passionate Workers",
+    description: "Guiding Beacons",
   },
   {
     label: "Algo",
     name: "Algorithm",
-    description: "Problem Setters",
+    description: "Puzzle Masters",
   },
   {
     label: "Dev",
