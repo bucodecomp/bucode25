@@ -182,6 +182,17 @@ const team: TeamMember[] = [
     },
   },
   {
+    name: "Celaleddin Ömer Sağlam",
+    subteam: subteams[1],
+    bio: "Problem Setter",
+    image: "/images/team/omer.jpg",
+    links: {
+      github: "https://github.com/comersaglam",
+      linkedin: "https://www.linkedin.com/in/celaleddin-omer-saglam",
+      twitter: undefined,
+    },
+  },
+  {
     name: "Ahmed Faruk Özgür",
     subteam: subteams[1],
     bio: "Problem Setter",
@@ -205,17 +216,6 @@ const team: TeamMember[] = [
   },
   {
     name: "Şevket Onur Yılmaz",
-    subteam: subteams[1],
-    bio: "Problem Setter",
-    image: "/images/team/avatar.svg",
-    links: {
-      github: undefined,
-      linkedin: undefined,
-      twitter: undefined,
-    },
-  },
-  {
-    name: "Celaleddin Ömer Sağlam",
     subteam: subteams[1],
     bio: "Problem Setter",
     image: "/images/team/avatar.svg",
@@ -251,7 +251,7 @@ const team: TeamMember[] = [
     name: "Umut Efe Seki",
     subteam: subteams[3],
     bio: "Sponsorship",
-    image: "/images/team/avatar.svg",
+    image: "/images/team/umut.jpg",
     links: {
       github: undefined,
       linkedin: undefined,
@@ -262,7 +262,7 @@ const team: TeamMember[] = [
     name: "Ömer Taha Örnek",
     subteam: subteams[3],
     bio: "Sponsorship",
-    image: "/images/team/avatar.svg",
+    image: "/images/team/taha.jpg",
     links: {
       github: undefined,
       linkedin: undefined,
