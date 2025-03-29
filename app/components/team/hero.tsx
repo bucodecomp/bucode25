@@ -8,7 +8,7 @@ export const TeamHero = () => {
           title="Meet the Team"
           description="Get to know about the dedicated individuals, shaping the run of 2025 at BuCode Algorithm Competition."
           align="center"
-          label="ABOUT BUCODE"
+          label="BEHIND THE SCENES"
         />
         <div className="flex w-full max-w-3xl flex-col gap-10 sm:gap-12 md:gap-20 ">
           <div className="h-[1px] bg-gradient-to-l from-ocean-900/0 via-ocean-900/20 to-ocean-900/0" />
