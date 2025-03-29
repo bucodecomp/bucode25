@@ -40,7 +40,7 @@ export default function Register({ loaderData }: Route.ComponentProps) {
             />
             <div className="flex items-center gap-4">
               <Link
-                to="/register"
+                to="/about"
                 className={primaryButton({
                   size: "md",
                 })}
