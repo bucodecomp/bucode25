@@ -53,24 +53,30 @@ export const TeamCard = ({ member }: { member: TeamMember }) => {
             </p>
           </div>
           <ul className="flex gap-3">
-            {Object.entries(member.links)
-              .sort(([key1], [key2]) => {
-                return key1 < key2 ? -1 : 1;
-              })
-              .map(([key, value]) => {
-                const Icon = linkToIcon[key as keyof typeof linkToIcon];
-                if (!value) return null;
-                return (
-                  <li key={key}>
-                    <a
-                      href={value}
-                      className="flex items-center justify-center p-1 text-ocean-950/50 transition-colors hover:text-ocean-1000"
-                    >
-                      <Icon className="h-6 w-6" />
-                    </a>
-                  </li>
-                );
-              })}
+            {member.links.linkedin ||
+            member.links.github ||
+            member.links.twitter ? (
+              Object.entries(member.links)
+                .sort(([key1], [key2]) => {
+                  return key1 < key2 ? -1 : 1;
+                })
+                .map(([key, value]) => {
+                  const Icon = linkToIcon[key as keyof typeof linkToIcon];
+                  if (!value) return null;
+                  return (
+                    <li key={key}>
+                      <a
+                        href={value}
+                        className="flex items-center justify-center p-1 text-ocean-950/50 transition-colors hover:text-ocean-1000"
+                      >
+                        <Icon className="h-6 w-6" />
+                      </a>
+                    </li>
+                  );
+                })
+            ) : (
+              <div className="h-6 w-6" />
+            )}
           </ul>
         </div>
       </div>
