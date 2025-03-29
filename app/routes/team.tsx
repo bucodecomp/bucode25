@@ -12,7 +12,7 @@ export function meta({ error }: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Get to know about the dedicated individuals, shaping the run of 2025 at BuCode Algorithm Competition.",
+        "Meet the brilliant minds behind BuCode! Learn about our team of organizers, problem setters, and developer who make the competition possible.",
     },
   ];
 }

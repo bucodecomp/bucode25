@@ -7,7 +7,11 @@ import type { Route } from "./+types/home";
 export function meta({ error }: Route.MetaArgs) {
   return [
     { title: "About BuCode" },
-    { name: "description", content: "Welcome to React Router!" },
+    {
+      name: "description",
+      content:
+        "Get general information about BuCode algorithm competition. Learn important dates and competition rules.",
+    },
   ];
 }
 

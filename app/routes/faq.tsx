@@ -11,7 +11,11 @@ import type { Route } from "./+types/home";
 export function meta({ error }: Route.MetaArgs) {
   return [
     { title: "Contact BuCode" },
-    { name: "description", content: "Welcome to React Router!" },
+    {
+      name: "description",
+      content:
+        "Get in touch with the organizers of BuCode. Have questions about rules, registration, or technical issues? Contact us for support and assistance!",
+    },
   ];
 }
 

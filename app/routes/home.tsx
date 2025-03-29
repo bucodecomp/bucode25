@@ -14,7 +14,8 @@ export function meta({ error }: Route.MetaArgs) {
     { title: "BuCode Landing Page" },
     {
       name: "description",
-      content: "BuCode is a competitive programming contest.",
+      content:
+        "Compete in BuCode, the ultimate algorithm challenge! Test your coding skills, solve complex problems, and climb the leaderboard. Register now!",
     },
   ];
 }

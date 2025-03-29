@@ -16,7 +16,7 @@ export function meta({ error }: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "BuCode 25 is a competition for university students to showcase their competitive programming skills. ",
+        "Sign up for BuCode and put your algorithm skills to the test! Register now to compete, solve challenges, and climb the leaderboard! ",
     },
   ];
 }
