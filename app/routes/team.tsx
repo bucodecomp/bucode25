@@ -53,8 +53,7 @@ const team: TeamMember[] = [
     name: "Işıl Su Karakuzu",
     subteam: subteams[0],
     bio: "Director of BuCode",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQG7_il61S-hvg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1683663177233?e=1748476800&v=beta&t=9noaOBFCihxB7VvT25TesX_RX_E7uP6bPAn6t9bGYak",
+    image: "./images/team/isil.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -65,7 +64,7 @@ const team: TeamMember[] = [
     name: "Tuğra Acar",
     subteam: subteams[0],
     bio: "Co-Director of BuCode",
-    image: "/images/team/jane-doe.jpg",
+    image: "/images/team/tugra.jpg",
     links: {
       github: "https://github.com/jane-doe",
       linkedin: "https://www.linkedin.com/in/jane-doe",
@@ -76,7 +75,7 @@ const team: TeamMember[] = [
     name: "Ümit Can Evleksiz",
     subteam: subteams[2],
     bio: "Design and Development Lead",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/umit.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -87,7 +86,7 @@ const team: TeamMember[] = [
     name: "Özgür Deniz Demir",
     subteam: subteams[2],
     bio: "Developer",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/deniz.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -95,10 +94,10 @@ const team: TeamMember[] = [
     },
   },
   {
-    name: "Ahmed Faruk Özgür",
+    name: "Beyza Nur Deniz",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/beyza.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -109,7 +108,7 @@ const team: TeamMember[] = [
     name: "Berk Sel",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/berk.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -120,7 +119,7 @@ const team: TeamMember[] = [
     name: "Atakan Yaşar",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/atakan.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -131,29 +130,7 @@ const team: TeamMember[] = [
     name: "Fatih Solak",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
-    links: {
-      github: "https://github.com/john-doe",
-      linkedin: "https://www.linkedin.com/in/john-doe",
-      twitter: undefined,
-    },
-  },
-  {
-    name: "Hakan Gökdoğan",
-    subteam: subteams[1],
-    bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
-    links: {
-      github: "https://github.com/john-doe",
-      linkedin: "https://www.linkedin.com/in/john-doe",
-      twitter: undefined,
-    },
-  },
-  {
-    name: "Şevket Onur Yılmaz",
-    subteam: subteams[1],
-    bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/fatih.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -164,7 +141,7 @@ const team: TeamMember[] = [
     name: "Utku Çelik",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/utku.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -175,7 +152,7 @@ const team: TeamMember[] = [
     name: "Yusuf Akın",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/yusuf.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -186,18 +163,7 @@ const team: TeamMember[] = [
     name: "Melih Akpınar",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
-    links: {
-      github: "https://github.com/john-doe",
-      linkedin: "https://www.linkedin.com/in/john-doe",
-      twitter: undefined,
-    },
-  },
-  {
-    name: "Celaleddin Ömer Sağlam",
-    subteam: subteams[1],
-    bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/melih.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -208,7 +174,51 @@ const team: TeamMember[] = [
     name: "Emin Ersüs",
     subteam: subteams[1],
     bio: "Problem Setter",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/emin.jpg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "Ahmed Faruk Özgür",
+    subteam: subteams[1],
+    bio: "Problem Setter",
+    image: "/images/team/avatar.svg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "Hakan Gökdoğan",
+    subteam: subteams[1],
+    bio: "Problem Setter",
+    image: "/images/team/avatar.svg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "Şevket Onur Yılmaz",
+    subteam: subteams[1],
+    bio: "Problem Setter",
+    image: "/images/team/avatar.svg",
+    links: {
+      github: "https://github.com/john-doe",
+      linkedin: "https://www.linkedin.com/in/john-doe",
+      twitter: undefined,
+    },
+  },
+  {
+    name: "Celaleddin Ömer Sağlam",
+    subteam: subteams[1],
+    bio: "Problem Setter",
+    image: "/images/team/avatar.svg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -219,7 +229,7 @@ const team: TeamMember[] = [
     name: "Damla Demirok",
     subteam: subteams[3],
     bio: "Event Organization",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/damla.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -230,7 +240,7 @@ const team: TeamMember[] = [
     name: "Nil Zeren Doğan",
     subteam: subteams[3],
     bio: "Event Organization",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/nil_zeren.jpg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -241,7 +251,7 @@ const team: TeamMember[] = [
     name: "Umut Efe Seki",
     subteam: subteams[3],
     bio: "Sponsorship",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/avatar.svg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -252,7 +262,7 @@ const team: TeamMember[] = [
     name: "Ömer Taha Örnek",
     subteam: subteams[3],
     bio: "Sponsorship",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/avatar.svg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
@@ -263,7 +273,7 @@ const team: TeamMember[] = [
     name: "Musa Kaan Güney",
     subteam: subteams[3],
     bio: "Event Organization",
-    image: "/images/team/john-doe.jpg",
+    image: "/images/team/avatar.svg",
     links: {
       github: "https://github.com/john-doe",
       linkedin: "https://www.linkedin.com/in/john-doe",
