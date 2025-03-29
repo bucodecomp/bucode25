@@ -94,6 +94,17 @@ const team: TeamMember[] = [
     },
   },
   {
+    name: "Atakan Yaşar",
+    subteam: subteams[1],
+    bio: "Algorithm Team Lead",
+    image: "/images/team/atakan.jpg",
+    links: {
+      github: "https://github.com/atakanyasar",
+      linkedin: "https://www.linkedin.com/in/atakan-yasar/",
+      twitter: undefined,
+    },
+  },
+  {
     name: "Beyza Nur Deniz",
     subteam: subteams[1],
     bio: "Problem Setter",
@@ -112,17 +123,6 @@ const team: TeamMember[] = [
     links: {
       github: "https://github.com/selbrk",
       linkedin: "https://www.linkedin.com/in/berk-sel",
-      twitter: undefined,
-    },
-  },
-  {
-    name: "Atakan Yaşar",
-    subteam: subteams[1],
-    bio: "Problem Setter",
-    image: "/images/team/atakan.jpg",
-    links: {
-      github: "https://github.com/atakanyasar",
-      linkedin: "https://www.linkedin.com/in/atakan-yasar/",
       twitter: undefined,
     },
   },

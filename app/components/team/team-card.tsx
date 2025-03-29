@@ -27,7 +27,7 @@ const linkToIcon = {
 export const TeamCard = ({ member }: { member: TeamMember }) => {
   return (
     <div className="rounded-[12px] bg-transparent p-1 text-center ring ring-white/4">
-      <div className="relative flex flex-col items-center gap-6 rounded-[8px] bg-ocean-50/50 p-6 ring ring-white/8">
+      <div className="relative flex h-full flex-col items-center gap-6 rounded-[8px] bg-ocean-50/50 p-6 ring ring-white/8">
         <div className="absolute inset-0 flex h-full w-full items-start justify-center">
           <CardBG />
         </div>

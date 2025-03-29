@@ -21,7 +21,7 @@ const TeaserCard = ({
           {title}
         </h3>
       </div>
-      <p className="max-w-[90%] text-[#7494AF] text-sm leading-6">
+      <p className="max-w-[90%] text-balance text-[#7494AF] text-sm leading-6">
         {description}
       </p>
     </div>
@@ -31,7 +31,7 @@ const TeaserCard = ({
 export const Teaser = () => {
   return (
     <section>
-      <div className="container mx-auto max-w-screen-2xl flex flex-col items-start gap-20 px-10 py-[120px]">
+      <div className="container mx-auto flex max-w-screen-2xl flex-col items-start gap-20 px-10 py-[120px]">
         <SectionHead
           label="Why BuCode?"
           title="Tried and True"
